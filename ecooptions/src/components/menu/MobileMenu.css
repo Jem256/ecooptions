@@ -1,0 +1,46 @@
+.mobileMenu__container {
+    background: rgba(6, 70, 53, 0.7);
+    width: max-content;
+    display: block;
+    padding: 0.7rem 1.7rem;
+    z-index: 2;
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 2rem;
+    display: flex;
+    gap: 0.8rem;
+    border-radius: 3rem;
+    backdrop-filter: blur(20px);
+    display: none;
+}
+
+.mobileMenu__container > a {
+    background: transparent;
+    padding: 0.9rem;
+    border-radius: 50%;
+    color: var(--color-light);
+    font-size: 1.5rem;
+}
+
+.mobileMenu__container > a:hover {
+    background: rgba(6, 70, 53, 1);
+}
+
+.mobileMenu__container > a.active {
+    background: var(--color-primary);
+    color: var(--color-bg);
+}
+
+/* ========== MEDIA QUERIES (MEDIUM DEVICES) ========== */
+@media screen and (max-width: 1024px) {
+  .mobileMenu__container {
+      display: block;
+  }
+  
+}
+
+/* ========== MEDIA QUERIES (SMALL DEVICES) ========== */
+@media screen and (max-width: 600px) {
+    
+}
