@@ -12,29 +12,35 @@ function Menu() {
     <div className="menu__container">
         <div className="menu__long">
             <Link to='/' >
-              <img src={logo} alt="" />
+              <img src={logo} alt="" className='menu__logo' />
             </Link>
             <nav>
-                <Link to="/shop">
+                <Link to="/shop" className='text'>
                     shop
                 </Link>
-                <Link to="/bundle">
+                <Link to="/bundle" className='text'>
                     bundle
                 </Link>
-                <Link to="/about">
+                <Link to="/about" className='text'>
                     About
                 </Link>
-                <Link to="/blog">
+                <Link to="/blog" className='text'>
                     blog
                 </Link>
-                <Link to="">
+                <Link to="" className='text'>
                     quiz
                 </Link>
             </nav>
             <div className="menu__icons">
-                <a href=""><AiOutlineSearch size={30} /></a>
-                <a href=""><AiOutlineWechat size={30}  className="menu__iconsChat"/></a>
-                <a href=''><AiOutlineShoppingCart size={30} className="menu__iconsChat"/></a>
+                <Link to="/">
+                    <AiOutlineSearch size={30} />
+                </Link>
+                <Link to="/contact">
+                    <AiOutlineWechat size={30}  className="menu__iconsChat"/>
+                </Link>
+                <Link to='/checkout'>
+                    <AiOutlineShoppingCart size={30} className="menu__iconsChat"/>
+                </Link>
             </div>
         </div>
         <MobileMenu className="mobile__menu"/>

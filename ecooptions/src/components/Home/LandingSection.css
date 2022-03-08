@@ -1,0 +1,63 @@
+.landingSection__container > img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: -1;
+}
+
+.landingSection__container {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    object-fit: contain;
+    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.2);
+}
+
+.landingSection__text {
+    margin-left: 4rem;
+}
+
+.landingSection__text > h1 {
+    text-transform: capitalize;
+    font-size: 4rem;
+    margin-top: -100px;
+    
+}
+
+.landingSection__text > h2 {
+    margin-top: 10px;
+    text-transform: uppercase;
+}
+
+.btn {
+    margin-top: 1.5rem !important;
+}
+
+/* ========== MEDIA QUERIES (MEDIUM DEVICES) ========== */
+@media screen and (max-width: 1024px) {
+  .landingSection__text > h1 {
+      font-size: 3rem;
+      margin-top: -150px;
+  }
+}
+
+/* ========== MEDIA QUERIES (SMALL DEVICES) ========== */
+@media screen and (max-width: 600px) {
+  .landingSection__text > h1 {
+      font-size: 2rem;
+      margin-top: -100px;
+  }
+  
+  .landingSection__text > h2 {
+      font-size: 1rem !important;
+  }
+
+  .landingSection__text {
+    margin-left: 2rem;
+    line-height: 1.5;
+}
+
+}

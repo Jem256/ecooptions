@@ -20,22 +20,22 @@
     column-gap: 10rem;
 }
 
-img {
+.menu__logo {
     width: 90px;
     margin: auto;
 }
 
-nav {
+.menu__long > nav {
     display: flex;
     align-items: center;
     gap: 3rem;
     margin: auto;
 }
 
-a {
+.text  {
     font-size: large;
-    text-transform: capitalize;
-    font-weight: 500;
+    text-transform: uppercase;
+    font-weight: 800;
 }
 
 .menu__icons {
@@ -56,7 +56,7 @@ a {
       grid-template-columns: auto auto;
   }
 
-  nav {
+  .menu__long > nav {
       display: none;
   }
 
@@ -68,7 +68,7 @@ a {
 
 /* ========== MEDIA QUERIES (SMALL DEVICES) ========== */
 @media screen and (max-width: 600px) {
-    nav {
+    .menu__long > nav {
       display: none;
   }
 }

@@ -20,11 +20,11 @@ html {
   --color-primary: #064635;
   --color-primary-variant: rgba(77, 181, 255, 0.4);
   --color-white: #fff;
-  --color-light: rgba(255, 255, 255, 0.6);
+  --color-light: #819fa7;
 
   --transition: all 400ms ease;
 
-  --container-width-lg: 75%;
+  --container-width-lg: 90%;
   --container-width-md: 86%;
   --container-width-ms: 90%;
 }
@@ -81,7 +81,7 @@ a:hover {
   width: max-content;
   display: inline-block;
   color: var(--color-primary);
-  padding: 0.75rem 1.2rem;
+  padding: 0.75rem 3rem;
   border-radius: 0.4rem;
   cursor: pointer;
   border: 1px solid var(--color-primary);

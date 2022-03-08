@@ -3,8 +3,8 @@ import './Shop.css'
 
 function Shop() {
   return (
-    <div>
-        <h1>shop</h1>
+    <div className='shop__container'>
+        <h1>shop here</h1>
     </div>
   )
 }

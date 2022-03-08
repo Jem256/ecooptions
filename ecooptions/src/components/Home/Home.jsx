@@ -1,10 +1,14 @@
 import React from 'react'
-import './Home.css'
+import EssentialsSection from './EssentialsSection'
+import LandingSection from './LandingSection'
 
 function Home() {
+
   return (
-    <div>
-      Home
+    <div className='home__container'>
+      <LandingSection/>
+      <EssentialsSection/>
+      
     </div>
   )
 }
