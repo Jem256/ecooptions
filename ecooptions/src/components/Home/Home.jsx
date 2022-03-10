@@ -1,6 +1,8 @@
 import React from 'react'
 import EssentialsSection from './EssentialsSection'
+import HomeAbout from './HomeAbout'
 import LandingSection from './LandingSection'
+import './Home.css'
 
 function Home() {
 
@@ -8,7 +10,7 @@ function Home() {
     <div className='home__container'>
       <LandingSection/>
       <EssentialsSection/>
-      
+      <HomeAbout/>
     </div>
   )
 }

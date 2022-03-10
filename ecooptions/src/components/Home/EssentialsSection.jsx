@@ -13,12 +13,12 @@ function EssentialsSection() {
       title: 'Eco Menstrual Cup' 
     },
     {
-      id: 1,
+      id: 2,
       image: IMG2,
       title: 'Eco Menstrual Disc' 
     },
     {
-      id: 1,
+      id: 3,
       image: IMG3,
       title: 'Eco Menstrual Undies' 
     }

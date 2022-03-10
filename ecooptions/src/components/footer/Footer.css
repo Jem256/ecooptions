@@ -3,6 +3,7 @@ footer {
     font-size: 0.9rem;
     display: flex;
     flex-direction: column;
+    bottom: 0;
 }
 
 .footer__socials > a {
@@ -67,5 +68,9 @@ footer {
   .footer__details {
       display: flex;
       flex-direction: column;
+      margin-left: 1rem;
+  }
+  .footer__mail > .btn {
+      padding: 0.4rem 1rem;
   }
 }
