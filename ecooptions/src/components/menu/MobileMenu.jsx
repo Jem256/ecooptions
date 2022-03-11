@@ -8,11 +8,33 @@ import { Link } from 'react-router-dom'
 
 function MobileMenu() {
   return (
-    <div className="mobileMenu__container">
-      <Link to="/"><AiOutlineHome/></Link>
-      <Link to="/shop"><AiOutlineShoppingCart/></Link>
-      <Link to="/about"><AiOutlineWechat/></Link>
-      <Link to="/blog"><BiMessageSquareDetail/></Link>
+    <div className="mobileMenu">
+      <div className="mobileMenu__container">
+        <div className="mobileMenu__item">
+          <Link to="/">
+            <AiOutlineHome/>
+            <span>Home</span>
+          </Link>
+        </div>
+        <div className="mobileMenu__item">
+          <Link to="/shop">
+            <AiOutlineShoppingCart/>
+            <span>Shop</span>
+          </Link>
+        </div>
+        <div className="mobileMenu__item">
+          <Link to="/about">
+            <AiOutlineWechat/>
+            <span>About</span>
+          </Link>
+        </div>
+        <div className="mobileMenu__item">
+          <Link to="/blog">
+            <BiMessageSquareDetail/>
+            <span>Blog</span>
+          </Link>
+        </div>
+      </div>
     </div>
   )
 }

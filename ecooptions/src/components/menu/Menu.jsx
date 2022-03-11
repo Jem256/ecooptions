@@ -1,13 +1,15 @@
 import React from 'react'
 import './Menu.css'
 import logo from '../../images/logoEC.png'
-import {AiOutlineWechat} from 'react-icons/ai'
 import {AiOutlineSearch} from 'react-icons/ai'
-import {AiOutlineShoppingCart} from 'react-icons/ai'
+import {MdOutlineShoppingBag} from 'react-icons/md'
 import MobileMenu from './MobileMenu'
 import { Link } from 'react-router-dom'
+import { useStateValue } from '../../StateProvider'
 
 function Menu() {
+    const [{basket}] = useStateValue();
+
   return (
     <div className="menu__container">
         <div className="menu__long">
@@ -18,8 +20,8 @@ function Menu() {
                 <Link to="/shop" className='text'>
                     shop
                 </Link>
-                <Link to="/bundle" className='text'>
-                    bundle
+                <Link to="/contact" className='text'>
+                    contact
                 </Link>
                 <Link to="/about" className='text'>
                     About
@@ -33,13 +35,16 @@ function Menu() {
             </nav>
             <div className="menu__icons">
                 <Link to="/">
-                    <AiOutlineSearch size={30} />
+                    <AiOutlineSearch className='menu__search' />
                 </Link>
-                <Link to="/contact">
-                    <AiOutlineWechat size={30}  className="menu__iconsChat"/>
-                </Link>
+                
                 <Link to='/checkout'>
-                    <AiOutlineShoppingCart size={30} className="menu__iconsChat"/>
+                    <div className="menu__basket menu__icons">
+                        <MdOutlineShoppingBag />
+                        <span className="menu__basketCount">
+                            {basket?.length}
+                        </span>
+                    </div>
                 </Link>
             </div>
         </div>

@@ -2,11 +2,12 @@ import React from 'react';
 import './App.css'
 import Menu from './components/menu/Menu';
 import About from './components/about/About';
-import Bundle from './components/bundle/Bundle';
+import Contact from './components/contact/Contact'
 import Home from './components/home/Home';
 import Shop from './components/shop/Shop';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Footer from './components/footer/Footer';
+import { useStateValue } from "./StateProvider";
 
 function App() {
 
@@ -23,8 +24,9 @@ function App() {
           <Shop/>
         </Route>
 
-        <Route path='/bundle'>
-          <Bundle/>
+        <Route path='/contact'>
+          <Contact
+          />
         </Route>
 
         <Route path='/' exact>

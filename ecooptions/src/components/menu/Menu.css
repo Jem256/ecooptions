@@ -41,29 +41,51 @@
 .menu__icons {
     display: flex;
     align-items: center;
-    justify-content: flex-end;
-    margin: auto;
-    gap: 1rem;
+    justify-content: center;
+    gap: 0.5rem;
+    font-weight: 800;
+    font-size: 1.8rem;
 }
 
 .menu__icons:hover {
     color: var(--color-white);
 }
 
+.menu__search {
+    margin-top: 15px;
+}
+
+.menu__basket {
+    display: flex;
+    align-items: center;
+    gap: 1px;
+}
+
+.menu__basketCount {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
 /* ========== MEDIA QUERIES (MEDIUM DEVICES) ========== */
 @media screen and (max-width: 1024px) {
   .menu__long {
-      grid-template-columns: auto auto;
+      grid-template-columns: 1fr 1fr;
   }
 
   .menu__long > nav {
       display: none;
   }
-
-  .menu__iconsChat {
-      display: none;
-  }
   
+  .menu__icons {
+      display: flex;
+      gap: 5px;
+      align-items: center;
+      justify-content: center;
+  }
+
+  .menu__basket {
+      gap: 1px;
+  }
 }
 
 /* ========== MEDIA QUERIES (SMALL DEVICES) ========== */

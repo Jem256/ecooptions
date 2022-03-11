@@ -27,4 +27,43 @@
 
 .about__founders-header > p {
     padding-top: 20px;
+    font-weight: 500;
+}
+
+/* ========== MEDIA QUERIES (MEDIUM DEVICES) ========== */
+@media screen and (max-width: 1024px) {
+    .about__foundersContainer {
+        margin-top: -7rem;
+    }
+    .about__founders {
+        grid-template-columns: 35% 55%;
+        gap: 10%;
+        margin: 0 6rem;
+    }
+    .about__founders-header > h3 {
+        font-size: 1.3rem;
+    }
+
+    .about__founders-header > h2 {
+        font-size: 1.4rem;
+    }
+}
+
+/* ========== MEDIA QUERIES (SMALL DEVICES) ========== */
+@media screen and (max-width: 600px) {
+    .about__foundersContainer {
+        margin-top: 20rem;
+    }
+    .about__founders {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        margin: 0 2rem;
+    }
+    .about__founders-header > h3 {
+        font-size: 1.3rem;
+    }
+
+    .about__founders-header > h2 {
+        font-size: 1.4rem;
+    }
 }

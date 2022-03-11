@@ -1,7 +1,6 @@
 import React from 'react'
 import './EssentialsSection.css'
 import IMG1 from '../../images/asset1.jpg'
-import IMG2 from '../../images/asset2.jpg'
 import IMG3 from '../../images/asset3.jpg'
 
 function EssentialsSection() {
@@ -14,7 +13,7 @@ function EssentialsSection() {
     },
     {
       id: 2,
-      image: IMG2,
+      image: IMG1,
       title: 'Eco Menstrual Disc' 
     },
     {
