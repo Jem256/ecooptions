@@ -6,15 +6,17 @@ function AboutFounders() {
   return (
     <section className="about__foundersContainer">
         <div className="about__founders">
-          <div className="about__founders-image">
-            <img src={us} alt="founders" />
+          <div className="founders">
+            <div className="about__founders-image">
+              <img src={us} alt="founders" />
+            </div>
           </div>
           <div className="about__founders-header">
             <h3>THE FOUNDERS</h3>
-            <h2>
+            <h1>
               Jemimah Nagasha <br />
               & Olivia Winter
-            </h2>
+            </h1>
             
             <p>
               I'm a paragraph. Click here to add your own text and edit me. It's easy. Just click
