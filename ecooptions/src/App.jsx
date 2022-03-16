@@ -25,8 +25,7 @@ function App() {
         </Route>
 
         <Route path='/contact'>
-          <Contact
-          />
+          <Contact/>
         </Route>
 
         <Route path='/' exact>

@@ -29,9 +29,9 @@ function MobileMenu() {
           </Link>
         </div>
         <div className="mobileMenu__item">
-          <Link to="/blog">
+          <Link to="/contact">
             <BiMessageSquareDetail/>
-            <span>Blog</span>
+            <span>Contact</span>
           </Link>
         </div>
       </div>

@@ -1,6 +1,6 @@
 import React from 'react'
 import './Product.css'
-import {AiOutlineStar} from 'react-icons/ai'
+import {BsDash} from 'react-icons/bs'
 import { useStateValue } from "../../StateProvider"
 
 function Product({title, image, price, rating, id}) {
@@ -21,22 +21,25 @@ function Product({title, image, price, rating, id}) {
 
   return (
     <div className='product'>
+        
+        <img className='product__img' src={image} width={400} height={400} alt="" />
+        
         <div className="product__info">
-            <p>{title}</p>
+            <em className='product__title'>{title} </em>
+            <BsDash/>
             <p className="product__price">
-                <small>/=</small>
+                <strong> UGX </strong>
                 <strong>{price}</strong>
             </p>
-            <div className="product__rating">
-                {Array(rating)
-                    .fill()
-                    .map((_, i) => (
-                        <p><AiOutlineStar/></p>
-                    ))}
-            </div>
         </div>
-        <img src={image} alt="" />
-        <button className='btn btn-primary' onClick={addToBasket}>Add to Basket</button>
+        {/* <div className="product__rating">
+            {Array(rating)
+                .fill()
+                .map((_, i) => (
+                    <p><AiOutlineStar/></p>
+                ))}
+        </div> */}
+        {/* <button className='btn btn-primary' onClick={addToBasket}>Add to Basket</button> */}
     </div>
   )
 }
