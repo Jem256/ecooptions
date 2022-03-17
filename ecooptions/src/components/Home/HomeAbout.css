@@ -1,6 +1,6 @@
 .home__about{
-    background: var(--color-white);
-    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.2);
+    background: var(--color-primary);
+    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.1);
     margin-top: -1rem;
     width: 100%;
 }
@@ -25,7 +25,7 @@
     width: 100%;
     animation-play-state: 1/1;
     border-radius: 2rem;
-    background: linear-gradient(45deg, transparent, var(--color-primary), transparent);
+    background: linear-gradient(45deg, transparent, var(--color-), transparent);
     display: grid;
     place-items: center;
 }
@@ -43,11 +43,22 @@
 
 .home__aboutContent > p {
     margin: 2rem 0 2.6rem;
-    color: var(--color-primary);
+    color: var(--color-white);
 }
 
-.btn:hover {
-    border: 1px solid var(--color-primary);
+.story {
+    width: max-content;
+    padding: 0.75rem 3rem;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    border: 1px solid var(--color-bg);
+    justify-content: center;
+    color: var(--color-white);
+}
+.story:hover {
+    background: var(--color-light);
+    border: transparent;
+    color: var(--color-bg);
 }
 
 /* ========== MEDIA QUERIES (MEDIUM DEVICES) ========== */
@@ -65,7 +76,7 @@
     .home__aboutContent > p {
         margin: 1rem 0 1.5rem;
     }
-    .btn {
+    .story {
         margin-bottom: 2rem;
     }
 }

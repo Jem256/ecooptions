@@ -3,11 +3,13 @@ import './Shop.css'
 import Product from '../product/Product'
 import IMG1 from '../../images/asset1.jpg'
 import IMG3 from '../../images/asset3.jpg'
+import green from '../../images/green.jpg'
 
 function Shop() {
   return (
     <div className='shop'>
-
+      <img src={green} alt="" />
+      
       <div className="shop__container">
 
         <div className="shop__header">

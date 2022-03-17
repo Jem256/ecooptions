@@ -17,20 +17,17 @@ function Menu() {
               <img src={logo} alt="" className='menu__logo' />
             </Link>
             <nav>
+                <Link to="/" className='text'>
+                    home
+                </Link>
                 <Link to="/shop" className='text'>
                     shop
-                </Link>
-                <Link to="/contact" className='text'>
-                    contact
                 </Link>
                 <Link to="/about" className='text'>
                     About
                 </Link>
-                <Link to="/blog" className='text'>
-                    blog
-                </Link>
-                <Link to="" className='text'>
-                    quiz
+                <Link to="/contact" className='text'>
+                    contact
                 </Link>
             </nav>
             <div className="menu__icons">

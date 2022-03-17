@@ -1,3 +1,21 @@
+.shop > img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: -1;
+    margin-top: -4rem;
+}
+
+.shop__container{
+    background: rgba(6, 70, 53, 0.7);
+    border-radius: 1rem;
+    backdrop-filter: blur(20px);
+    z-index: 2;
+    color: var(--color-white);
+    padding: 2rem;
+}
+
 .shop__header {
     margin-top: 8rem;
     text-align: center;

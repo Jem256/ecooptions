@@ -23,7 +23,9 @@ function HomeAbout() {
                     innovative sustainable period options for all people regardless of their income. 
                 </p>
 
-                <Link to='/about' className='btn btn-primary'>Our Story</Link>
+                <Link to='/about' className='story'>
+                    Our Story
+                </Link>
             </div>
 
         </div>
