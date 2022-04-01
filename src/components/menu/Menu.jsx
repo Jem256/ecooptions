@@ -35,7 +35,7 @@ function Menu() {
                     <AiOutlineSearch className='menu__search' />
                 </Link>
                 
-                <Link to='/checkout'>
+                <Link to='/cart'>
                     <div className="menu__basket menu__icons">
                         <MdOutlineShoppingBag />
                         <span className="menu__basketCount">

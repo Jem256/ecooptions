@@ -26,7 +26,6 @@ function Product({title, image, price, rating, id}) {
         
         <div className="product__info">
             <em className='product__title'>{title} </em>
-            <BsDash/>
             <p className="product__price">
                 <strong> UGX </strong>
                 <strong>{price}</strong>
@@ -39,7 +38,7 @@ function Product({title, image, price, rating, id}) {
                     <p><AiOutlineStar/></p>
                 ))}
         </div> */}
-        {/* <button className='btn btn-primary' onClick={addToBasket}>Add to Basket</button> */}
+        <button className='btn btn-primary' onClick={addToBasket}>Add to Basket</button>
     </div>
   )
 }

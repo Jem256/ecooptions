@@ -8,21 +8,29 @@
     cursor: pointer;
 }
 
+.product > button {
+    margin-top: 5px !important;
+}
+
 .product__img {
     width: 100%;
     object-fit: contain;
-    border-radius: 1rem;
 }
 
 .product__info {
     display: flex;
-    gap: 10px;
-    padding: 1rem;
     align-items: center;
+    gap: 1rem;
+}
+.product__title {
+    font-size: 1.5rem !important;
 }
 
 /* ========== MEDIA QUERIES (MEDIUM DEVICES) ========== */
 @media screen and (max-width: 1024px) {
+    .product__info {
+        flex-direction: column;
+    }
 }
 
 /* ========== MEDIA QUERIES (SMALL DEVICES) ========== */

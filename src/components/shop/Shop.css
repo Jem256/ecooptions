@@ -4,7 +4,6 @@
     height: 100%;
     position: fixed;
     z-index: -1;
-    margin-top: -4rem;
 }
 
 .shop__container{
@@ -13,11 +12,11 @@
     backdrop-filter: blur(20px);
     z-index: 2;
     color: var(--color-white);
-    padding: 2rem;
+    padding: 1rem;
 }
 
 .shop__header {
-    margin-top: 8rem;
+    margin-top: 6rem;
     text-align: center;
 }
 
@@ -26,21 +25,28 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     justify-content: center;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 
 
 
 /* ========== MEDIA QUERIES (MEDIUM DEVICES) ========== */
 @media screen and (max-width: 1024px) {
-  .shop__row {
+    .shop__row {
       grid-template-columns: 1fr 1fr;
-  }
+    }
+    .shop__header{
+        margin-top: 5rem;
+    }
 }
 
 /* ========== MEDIA QUERIES (SMALL DEVICES) ========== */
 @media screen and (max-width: 600px) {
     .shop__row{
         grid-template-columns: 1fr;
+    }
+
+    .shop__header{
+        margin-top: 5rem;
     }
 }

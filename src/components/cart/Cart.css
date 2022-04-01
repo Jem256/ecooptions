@@ -1,0 +1,99 @@
+.cart {
+    background-color: var(--color-light);
+    border-radius: 1rem;
+    backdrop-filter: blur(20px);
+    z-index: 2;
+    color: var(--color-white);
+    padding: 2rem;
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 45rem;
+    height: max-content;
+    margin-top: 8rem;
+    margin-bottom: 2rem;
+}
+
+.cart__heading {
+    padding: 0.95rem 1rem;
+    font-weight: bold;
+    border-bottom: 2px solid var(--color-primary);
+    color: var(--color-primary);
+    font-size: 1.25rem;
+}
+
+.cart__iner {
+    padding: 1.25rem;
+}
+
+.cart__total {
+    display: flex;
+    padding: 1rem 1.25rem 0;
+    border-top: 2px solid var(--color-primary);
+    justify-content: space-between;
+}
+
+.cart__total-title {
+    color: var(--color-primary);
+    font-weight: bold;
+}
+
+ .cart__none {
+    padding: 1.25rem;
+    color: var(--color-primary);
+    text-align: center;
+}
+
+.cart__footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cart__btn-empty {
+    align-self: flex-start;
+    background-color: var(--color-white);
+    border: 2px solid var(--color-primary);
+    padding-left: 1.25rem;
+    padding: 0.5rem 0.75rem;
+    margin: 0 1.25rem 1.25rem;
+    text-transform: uppercase;
+    color: var(--color-primary);
+    font-weight: bold;
+    font-size: 0.75rem;
+}
+
+.cart__btn-checkout {
+    background-color: var(--color-primary);
+    border: 2px solid var(--color-primary);
+    padding-left: 1.25rem;
+    padding: 0.5rem 0.75rem;
+    margin: 0 1.25rem 1.25rem;
+    text-transform: uppercase;
+    color: white;
+    font-weight: bold;
+    font-size: 0.75rem;
+}
+
+.cart__btn-checkout:hover {
+    background-color: lighten(#292B83, 10);
+}
+
+/* ========== MEDIA QUERIES (MEDIUM DEVICES) ========== */
+@media screen and (max-width: 1024px) {
+    .cart{
+        width: max-content;
+        height: max-content;
+    }
+}
+
+/* ========== MEDIA QUERIES (SMALL DEVICES) ========== */
+@media screen and (max-width: 600px) {
+    .cart{
+        width: 20rem;
+        height: max-content;
+    }
+    .cart__heading > h2 {
+        padding-top: 0;
+    }
+}
