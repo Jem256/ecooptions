@@ -53,7 +53,8 @@ const AddressForm = () => {
     });
 
     if (paymentSuccessfull) {
-      //Write to firebase
+      // Write to order firebase
+      // Send Email code can go here as well
     }
   };
 
