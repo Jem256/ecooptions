@@ -1,11 +1,17 @@
-import React, {useState} from 'react'
-import './Checkout.css'
-import { Stepper, Step, StepLabel, CircularProgress, Divider } from '@mui/material';
+import React, { useState } from "react";
+import "./Checkout.css";
+import {
+  Stepper,
+  Step,
+  StepLabel,
+  CircularProgress,
+  Divider,
+} from "@mui/material";
 // import { Link, useHistory } from 'react-router-dom';
-import AddressForm from './AddressForm';
-import PaymentForm from './PaymentForm';
+import AddressForm from "./AddressForm";
+import PaymentForm from "./PaymentForm";
 
-const steps = ['Delivery address', 'Payment details']
+const steps = ["Delivery address", "Payment details"];
 
 function Checkout() {
   const [activeStep, setActiveStep] = useState(0);
@@ -14,35 +20,42 @@ function Checkout() {
   const nextStep = () => setActiveStep((prevActiveStep) => prevActiveStep + 1);
   const backStep = () => setActiveStep((prevActiveStep) => prevActiveStep - 1);
 
-    const test = (data) => {
-        setShippingData(data);
+  const test = (data) => {
+    setShippingData(data);
 
-        nextStep();
-    };
+    nextStep();
+  };
 
-    const Form = () => (activeStep === 0
-      ? <AddressForm nextStep={nextStep} setShippingData={setShippingData} test={test} />
-      : <PaymentForm nextStep={nextStep} backStep={backStep} shippingData={shippingData} />
+  const Form = () =>
+    activeStep === 0 ? (
+      <AddressForm
+        nextStep={nextStep}
+        setShippingData={setShippingData}
+        test={test}
+      />
+    ) : (
+      <PaymentForm
+        nextStep={nextStep}
+        backStep={backStep}
+        shippingData={shippingData}
+      />
     );
 
   return (
     <>
-      <div className='toolbar' />
-      <div className='layout'>
-        <div className='paper'>
+      <div className="toolbar" />
+      <div className="layout">
+        <div className="paper">
           <h2 align="center">Checkout</h2>
-          <Stepper activeStep={activeStep} className='stepper'>
-            {steps.map((label) => (
-              <Step key={label}>
-                <StepLabel>{label}</StepLabel>
-              </Step>
-            ))}
-          </Stepper>
-          {activeStep === steps.length ? <Confirmation /> : <Form />}
+          {setActiveStep ? (
+            <AddressForm></AddressForm>
+          ) : (
+            <PaymentForm></PaymentForm>
+          )}
         </div>
       </div>
     </>
   );
 }
 
-export default Checkout
+export default Checkout;
