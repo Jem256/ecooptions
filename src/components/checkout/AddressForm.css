@@ -1,0 +1,31 @@
+.header {
+    color: var(--color-primary);
+    font-size: 1.5rem;
+    padding: 5px;
+}
+
+.addressForm > form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.addressForm > form > input {
+    height: 30px;
+    padding: 1rem;
+    border: none;
+    border-bottom: 1px solid whitesmoke;
+    border-radius: 5px;
+    outline: none;
+}
+
+/* ========== MEDIA QUERIES (MEDIUM DEVICES) ========== */
+@media screen and (max-width: 1024px) {
+    .checkout__button {
+        padding: 0.5rem 2rem;
+    }
+
+    .addressForm > form {
+        grid-template-columns: 1fr;
+    }
+}

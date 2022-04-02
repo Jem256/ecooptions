@@ -1,8 +1,8 @@
 import React from 'react';
-import './Funds.css'
+import './PaymentForm.css'
 import { useFlutterwave, closePaymentModal } from 'flutterwave-react-v3';
 
-function Funds() {
+function PaymentForm() {
   const config = {
     public_key: 'FLWPUBK_TEST-9b40f2e0444437a3dd56b2d0ddfea493-X',
     tx_ref: Date.now(),
@@ -45,4 +45,4 @@ function Funds() {
   );
 }
 
-export default Funds
+export default PaymentForm

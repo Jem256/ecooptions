@@ -10,7 +10,7 @@ import Footer from './components/footer/Footer';
 import { useStateValue } from "./StateProvider";
 import Checkout from './components/checkout/Checkout';
 import Cart from './components/cart/Cart';
-import Funds from './components/checkout/Funds';
+import PaymentForm from './components/checkout/PaymentForm';
 
 function App() {
  
@@ -36,7 +36,7 @@ function App() {
         </Route>
 
         <Route path='/payment'>
-          <Funds/>
+          <PaymentForm/>
         </Route>
 
         <Route path='/checkout'>
