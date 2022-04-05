@@ -17,39 +17,41 @@ function Bundle() {
       <div className="contact__container">
         <h2>Get In Touch</h2>
         <div className=" contact__talk">
-          <div className="contact__icons">
+          <article className="contact__icons">
             <FiPhoneCall/>
-            <span>Call</span>
-          </div>
-          <div className="contact__icons">
-            <MdOutlineMail/>
-            <span>Email</span>
-          </div>
-          <div className="contact__icons">
+            <a href='tel:+256-705-464-186' >Call</a>
+          </article>
+          
+          <article className='contact__icons'  >
+            <MdOutlineMail /> 
+            <a href="mailto:support@ecooptionsug.com" target='_blank'>Email</a>
+          </article>
+            
+          <article className="contact__icons">
             <BsWhatsapp/>
-            <span>WhatsApp</span>
-          </div>
-          <div className="contact__icons">
+            <a href="https://api.whatsapp/send?phone+256761297958" target='_blank'>WhatsApp</a>
+          </article>
+          <article className="contact__icons">
             <RiMessengerLine/>
-            <span>Messenger</span>
-          </div>
+            <a href="https://m.me/jemimah.nagasha" target='_blank'>Messenger</a>
+          </article>
       
         </div>
 
         <h2>Follow Us</h2>
         <div className="contact__follow">
-          <div className="contact__icons">
+          <article className="contact__icons">
             <IoLogoTwitter/>
-            <span>Twitter</span>
-          </div>
-          <div className="contact__icons">
+            <a href='https://twitter.com/EcoOptions_' target='_blank' >Twitter</a>
+          </article>
+          <article className="contact__icons">
             <FaFacebookF/>
-            <span>Facebook</span>
-          </div>
-          <div className="contact__icons">
+            <a href='https://www.facebook.com/EcoOptions/' target='_blank'>Facebook</a>
+          </article>
+          <article className="contact__icons">
             <FiInstagram/>
-            <span>Instagram</span>
-          </div>
+            <a href='https://instagram.com/ecooptions_' >Instagram</a>
+          </article>
         </div>
         
       </div>

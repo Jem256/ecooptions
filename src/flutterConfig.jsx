@@ -1,6 +1,6 @@
 export const defaultFlutterConfig = {
   // This should go to environment
-  public_key: "FLWPUBK_TEST-9b40f2e0444437a3dd56b2d0ddfea493-X",
+  public_key: process.env.REACT_APP_FLUTTER_PUBLIC_KEY,
   tx_ref: Date.now(),
   currency: "UGX",
   payment_options: "mobilemoney,card,ussd",

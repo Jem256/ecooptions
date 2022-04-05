@@ -1,9 +1,10 @@
 import React from 'react'
 import './Shop.css'
 import Product from '../product/Product'
-import IMG1 from '../../images/asset1.jpg'
-import IMG3 from '../../images/asset3.jpg'
-import green from '../../images/green.jpg'
+import IMG1 from '../../images/cup.png'
+import IMG2 from '../../images/disc.png'
+import IMG3 from '../../images/panty.jpg'
+import IMG4 from '../../images/patch.jpeg'
 
 function Shop() {
   return (
@@ -13,54 +14,45 @@ function Shop() {
       <div className="shop__container">
 
         <div className="shop__header">
-          <h1>Products</h1>
+          <h1>
+            to go with your flow <br />
+          </h1>
         </div>
 
         <div className='shop__row'>
           <Product 
-            id="12321341"
+            id="1"
             title="Menstrual Cup"
-            price={11000}
-            rating={5}
-            image={IMG1} 
+            price={50000}
+            image={IMG1}
           />
 
           <Product 
-            id="49538094"
-            title="Menstrual Underwear"
-            price={10000}
-            rating={4}
-            image={IMG3}
+            id="2"
+            title="Menstrual Disc"
+            price={50000}
+            image={IMG2}
           />
           <Product 
-            id="12321341"
-            title="Menstrual Cup"
-            price={11000}
-            rating={5}
-            image={IMG1} 
+            id="3"
+            title="Menstrual Underwear"
+            price={50000}
+            image={IMG3} 
           />
 
           <Product 
-            id="49538094"
-            title="Menstrual Underwear"
-            price={239.0}
-            rating={4}
-            image={IMG3}
+            id="4"
+            title="Heat Patches"
+            price={15000}
+            image={IMG4}
           />
-          <Product 
-            id="12321341"
-            title="Menstrual Cup"
-            price={11.96}
-            rating={5}
-            image={IMG1} 
-          />
-          <Product 
-            id="49538094"
-            title="Menstrual Underwear"
-            price={239.0}
-            rating={4}
-            image={IMG3}
-          />
+
+          {/* <Product 
+            id="6"
+            title="Period Care Package"
+            price={100000}
+            image={}
+          /> */}
         </div>
 
       </div>

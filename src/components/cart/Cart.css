@@ -50,6 +50,16 @@
     justify-content: space-between;
 }
 
+.cart__discount {
+    padding: 0.5rem 0.75rem;
+    margin: 0 1.25rem 1.25rem;
+    border: none;
+    border-bottom: 1px solid whitesmoke;
+    border-radius: 5px;
+    outline: none;
+    text-align: center;
+}
+
 .cart__btn-empty {
     align-self: flex-start;
     background-color: var(--color-white);
@@ -96,4 +106,8 @@
     .cart__heading > h2 {
         padding-top: 0;
     }
+    .cart__discount {
+        padding: 1rem 0.2px ;
+    }
+    
 }

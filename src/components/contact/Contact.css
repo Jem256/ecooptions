@@ -36,6 +36,10 @@
     cursor: pointer;
 }
 
+.contact__icons > a {
+    color: inherit;
+}
+
 .contact__icons:hover {
     width: max-content;
     padding: 0.75rem 3rem;

@@ -21,7 +21,7 @@ function CartItem({id, image, title, price, rating, hideButton}) {
             <div className='cart-item__details'>
                 <p className='cart-item__title'>{title}</p>
                 <p className='checkoutProduct__price'>
-                    <small>$</small>
+                    <small>UGX</small>
                     <strong>{price}</strong>
                 </p>
                 {/* <div className='checkoutProduct__rating'>

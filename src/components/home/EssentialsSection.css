@@ -1,5 +1,5 @@
 .home__essentials {
-    background: var(--color-primary);
+    background: var(--color-bg-variant);
     box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.1);
     margin-top: 0;
 }
@@ -12,6 +12,7 @@
 
 .home__essentials > h2 {
     font-size: 4rem;
+    color: var(--color-primary);
 }
 
 .essentials__container {
@@ -30,7 +31,7 @@
     width: 100%;
     animation-play-state: 1/1;
     border-radius: 2rem;
-    background: linear-gradient(45deg, transparent, var(--color-light), transparent);
+    background: linear-gradient(45deg, transparent, var(--color-primary), transparent);
     display: grid;
     place-items: center;
 }
@@ -48,7 +49,7 @@
 
 .essentials__item > h3 {
     margin: 1.2rem 0 2rem;
-    color: var(--color-white);
+    color: var(--color-primary);
 }
 
 /* ========== MEDIA QUERIES (MEDIUM DEVICES) ========== */

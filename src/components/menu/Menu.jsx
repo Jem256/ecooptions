@@ -31,9 +31,9 @@ function Menu() {
                 </Link>
             </nav>
             <div className="menu__icons">
-                <Link to="/">
+                {/* <Link to="/">
                     <AiOutlineSearch className='menu__search' />
-                </Link>
+                </Link> */}
                 
                 <Link to='/cart'>
                     <div className="menu__basket menu__icons">

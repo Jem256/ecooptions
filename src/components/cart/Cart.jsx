@@ -42,10 +42,48 @@ function Cart() {
         ))
     )
 
-    const renderTotal = () => (
+    const coupon = () => {
+        
+    }
+
+    
+    const renderDiscount = () => (
         <div className="cart__total">
-            <p className="cart__total-title"> Subtotal:</p>
-            <p className="cart__total-price">
+            <p className="cart__total-title"> Dicount Code:</p>
+            <form>
+                <input 
+                className='cart__discount'
+                name="discount"
+                placeholder="Enter Dicount Code"
+                type="text"
+                />
+                <button type='submit' className="cart__btn-checkout btn">Apply</button>
+            </form>
+        </div>
+    )
+
+    
+    const finalPrice = () => {
+        if (renderDiscount()) {
+            return(
+                <CurrencyFormat 
+                renderText={(value) =>(
+                    <>
+                        <p>
+                            ({basket.length} items): <strong>{value}</strong>
+                        </p>
+                    </>
+                )}
+                decimalScale={2}
+                value={getBasketTotal(basket)*0.95}
+                displayType={"text"}
+                thousandSeparator={true}
+                prefix={'UGX'}
+                />
+                )
+            }
+            
+            return(
                 <CurrencyFormat 
                 renderText={(value) =>(
                     <>
@@ -60,15 +98,24 @@ function Cart() {
                 thousandSeparator={true}
                 prefix={'UGX'}
                 />
-            </p>
-        </div>
-    )
-
-    return (
+            )
+        }
+        
+        const renderTotal = () => (
+            <div className="cart__total">
+                <p className="cart__total-title"> Subtotal:</p>
+                <p className="cart__total-price">
+                    {finalPrice()}
+                </p>
+            </div>
+        )
+        
+        return (
         <div className='cart'>
             <h4 className='cart__heading'>Your Shopping Cart</h4>
             { renderEmptyMessage() }
             { renderItems() }
+            { renderDiscount() }
             { renderTotal() }
             <div className="cart__footer">
                 <button className="cart__btn-empty btn" onClick={emptyCart}>Empty cart</button>

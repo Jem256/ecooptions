@@ -8,21 +8,17 @@ function AboutContent() {
       <div className="about__content">
         <h3>about eco options</h3>
         <h1>
-        we care about our <br />
-        bodies and our future
+        do you have a period? <br /> 
+        Great! 
+        we're here to make it better
         </h1>
         <p>
-        I'm a paragraph. Click here to add your own text and edit me. It's easy. 
-        Just click “Edit Text” or double click me to add your own content and make 
-        changes to the font. Feel free to drag and drop me anywhere you like on your page. 
-        I'm a great place for you to tell a story and let your users know a little more about you. 
-        </p>
-        <p>
-        This is a great space to write long text about your company and your services. 
-        You can use this space to go into a little more detail about your company. Talk 
-        about your team and what services you provide. Tell your visitors the story of 
-        how you came up with the idea for your business and what makes you different from 
-        your competitors. Make your company stand out and show your visitors who you are. 
+        Eco Options is a asocial enterprise that was birthed from the need to 
+        revolutionize menstrual care in Uganda. We aim to change attitudes and 
+        improve lives through providing innovative sustainable peiod options
+        for all people regardless of their income. We use the power of business
+        to tackle social and environmental challenges resulting from period poverty
+        in Uganda.  
         </p>
       </div>
     </section>

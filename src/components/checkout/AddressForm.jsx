@@ -1,14 +1,15 @@
-import React, { useState } from "react";
-import { Grid } from "@mui/material";
-import { useForm, FormProvider } from "react-hook-form";
+import React, { useState, useRef } from "react";
+import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import "./AddressForm.css";
 import { useFlutterwave, closePaymentModal } from "flutterwave-react-v3";
 import { getBasketTotal } from "../../reducer";
 import { defaultFlutterConfig } from "../../flutterConfig";
 import { useStateValue } from "../../StateProvider";
-// import { db } from '../../firebase'
-// import firebase from 'firebase'
+import { collection, addDoc, serverTimestamp } from 'firebase/firestore'
+import db from '../../firebase'
+// import emailjs from '@emailjs/browser'
+
 
 const AddressForm = () => {
   const initialFormData = {
@@ -20,13 +21,45 @@ const AddressForm = () => {
   };
 
   const { register } = useForm();
-  const [{ basket }] = useStateValue();
+  const [{ basket }, dispatch] = useStateValue();
   const [formData, setFormData] = useState(initialFormData);
   const [flutterConfig, setflutterConfig] = useState(defaultFlutterConfig);
 
   const onChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
+
+  // const form = useRef();
+
+  // const sendEmail = (e) => {
+  //   e.preventDefault();
+
+  //   emailjs.sendForm('service_8we25mm', 'template_9rzwtnp', form.current, '0fSca5SaAUtaCf93w')
+  //     .then((result) => {
+  //       console.log(result.text);
+  //     }, (error) => {
+  //       console.log(error.text);
+  //     });
+  // }
+
+  async function addData(){
+    await addDoc(collection(db, 'orders'), {
+      basket: basket,
+      customer: formData.firstName,
+      email: formData.email,
+      phoneNumber: formData.phoneNumber,
+      address: formData.address,
+      city: formData.city,
+      timestamp: serverTimestamp()
+    })
+  }
+
+  const emptyCart = () => {
+        dispatch({
+            type: 'EMPTY_BASKET',
+            basket: basket,
+        })
+  }
 
   const makePayment = () => {
     setflutterConfig({
@@ -39,32 +72,31 @@ const AddressForm = () => {
       },
     });
 
-    let paymentSuccessfull = false;
+    // let paymentSuccessfull = false;
 
     handleFlutterPayment({
       callback: (response) => {
-        console.log(response);
-        if (paymentSuccessfull) {
-          paymentSuccessfull = true;
-        }
+        console.log(response);    
+
         closePaymentModal(); // this will close the modal programmatically
       },
-      onClose: () => {},
+      onClose: () => {
+        addData();
+        emptyCart();
+      },
     });
 
-    if (paymentSuccessfull) {
-      // Write to order firebase
-      // Send Email code can go here as well
-    }
+    
   };
 
   const handleFlutterPayment = useFlutterwave(flutterConfig);
 
+
   return (
     <div className="addressForm">
-      <h5 className="header" gutterBottom>
+      <h2 className="header">
         Delivery Address
-      </h5>
+      </h2>
       <form>
         <input
           name="firstName"
@@ -111,14 +143,14 @@ const AddressForm = () => {
       </form>
       <br />
       <div style={{ display: "flex", justifyContent: "space-between" }}>
-        <button
-          component={Link}
-          variant="outlined"
-          to="/cart"
-          className="btn btn-primary checkout__button"
-        >
-          Back to Cart
-        </button>
+        <Link to='/cart'>
+          <button
+            variant="outlined"
+            className="btn btn-primary checkout__button"
+          >
+            Back to Cart
+          </button>
+        </Link>
         <button
           onClick={makePayment}
           type="submit"

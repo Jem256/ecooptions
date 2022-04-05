@@ -1,6 +1,6 @@
 import React from 'react'
 import './HomeAbout.css'
-import us from '../../images/asset5.jpg'
+import us from '../../images/IMG_about1.jpg'
 import {Link} from 'react-router-dom'
 
 function HomeAbout() {
@@ -19,11 +19,10 @@ function HomeAbout() {
             <div className="home__aboutContent">
                 <p>
                     Eco Options is a social enterprise that was birthed from the need to revolutionize
-                    menstrual care in Uganda. We aim to change attitudes and improve lives through providing 
-                    innovative sustainable period options for all people regardless of their income. 
+                    menstrual care in Uganda.
                 </p>
 
-                <Link to='/about' className='story'>
+                <Link to='/about' className='story btn btn-primary'>
                     Our Story
                 </Link>
             </div>

@@ -35,5 +35,14 @@
 
 /* ========== MEDIA QUERIES (SMALL DEVICES) ========== */
 @media screen and (max-width: 600px) {
+    .product__info {
+        gap: 1px;
+    }
+    .product {
+        margin: 0 1rem;
+    }
+    .product__title {
+        
+    }
     
 }

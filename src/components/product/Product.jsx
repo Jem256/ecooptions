@@ -15,32 +15,32 @@ function Product({title, image, price, rating, id}) {
                 image: image,
                 price: price,
                 rating: rating,
+                key: id+1
             }
         })
     }
 
-  return (
-    <div className='product'>
-        
-        <img className='product__img' src={image} width={400} height={400} alt="" />
-        
-        <div className="product__info">
-            <em className='product__title'>{title} </em>
-            <p className="product__price">
-                <strong> UGX </strong>
-                <strong>{price}</strong>
-            </p>
+    return (
+        <div className='product'>   
+            <img className='product__img' src={image} width={400} height={400} alt="" />
+            
+            <div className="product__info">
+                <strong className='product__title'>{title} </strong>
+                <p className="product__price">
+                    <strong> UGX </strong>
+                    <strong>{price}</strong>
+                </p>
+            </div>
+            {/* <div className="product__rating">
+                {Array(rating)
+                    .fill()
+                    .map((_, i) => (
+                        <p><AiOutlineStar/></p>
+                    ))}
+            </div> */}
+            <button className='btn btn-primary' onClick={addToBasket}>Add to Basket</button>
         </div>
-        {/* <div className="product__rating">
-            {Array(rating)
-                .fill()
-                .map((_, i) => (
-                    <p><AiOutlineStar/></p>
-                ))}
-        </div> */}
-        <button className='btn btn-primary' onClick={addToBasket}>Add to Basket</button>
-    </div>
-  )
+    )
 }
 
 export default Product

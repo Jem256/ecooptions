@@ -1,7 +1,8 @@
 .about__contentContainer {
     width: 100%;
-    padding: 12rem 0 1rem;
     margin-top: -2rem;
+    padding: 12rem 0 1rem;
+    
 }
 
 .about__content {
@@ -15,15 +16,15 @@
 }
 
 .about__content > h1 {
-    font-size: 4rem;
+    font-size: 3rem;
     text-transform: capitalize;
     line-height: 1.2;
-    color: var(--color-white);
+    color: var(--color-primary);
 }
 
 .about__content > p {
     margin: 1rem 0;
-    color: var(--color-white);
+    color: var(--color-primary);
 }
 
 /* ========== MEDIA QUERIES (MEDIUM DEVICES) ========== */

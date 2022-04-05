@@ -8,9 +8,8 @@ import Shop from './components/shop/Shop';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Footer from './components/footer/Footer';
 import { useStateValue } from "./StateProvider";
-import Checkout from './components/checkout/Checkout';
 import Cart from './components/cart/Cart';
-import PaymentForm from './components/checkout/PaymentForm';
+import AddressForm from './components/checkout/AddressForm';
 
 function App() {
  
@@ -35,12 +34,8 @@ function App() {
           <Cart/>
         </Route>
 
-        <Route path='/payment'>
-          <PaymentForm/>
-        </Route>
-
         <Route path='/checkout'>
-          <Checkout/>
+          <AddressForm/>
         </Route>
 
         <Route path='/' exact>
