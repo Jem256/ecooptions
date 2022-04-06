@@ -80,12 +80,8 @@ const AddressForm = () => {
 
         closePaymentModal(); // this will close the modal programmatically
       },
-      onClose: () => {
-        addData();
-        emptyCart();
-      },
-    });
-
+      onClose: () => {}
+    }).then(addData())
     
   };
 

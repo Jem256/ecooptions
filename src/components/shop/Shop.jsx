@@ -23,7 +23,7 @@ function Shop() {
           <Product 
             id="1"
             title="Menstrual Cup"
-            price={50000}
+            price={50}
             image={IMG1}
           />
 
