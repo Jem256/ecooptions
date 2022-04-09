@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, Fragment } from 'react';
 import './App.css'
 import Menu from './components/menu/Menu';
 import About from './components/about/About';
@@ -10,11 +10,13 @@ import Footer from './components/footer/Footer';
 import { useStateValue } from "./StateProvider";
 import Cart from './components/cart/Cart';
 import AddressForm from './components/checkout/AddressForm';
+import ScrollToTop from './components/scrollToTop'
 
 function App() {
  
   return (
     <Router>
+      <ScrollToTop />
       <Menu/>
 
       <Switch>

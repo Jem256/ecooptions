@@ -55,15 +55,26 @@
     .about__founders {
         grid-template-columns: 1fr;
         gap: 2rem;
-        margin: 0 6rem !important
+    }
+    .about__founders-header{
+        justify-content: center;
+        text-align: center;
     }
 }
 
 /* ========== MEDIA QUERIES (SMALL DEVICES) ========== */
 @media screen and (max-width: 600px) {
     .about__founders {
-        margin: 0 2rem !important;
+        grid-template-columns: 1fr;
+        gap: 1rem;
         text-align: center;
+        margin: 0 1rem !important;
+    }
+    .founders{
+        width: 100%;
+        height: max-content;
+        justify-content: center;
+        align-items: center;
     }
     .about__founders-header > h3 {
         font-size: 1.3rem;

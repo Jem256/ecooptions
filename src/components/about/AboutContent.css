@@ -30,7 +30,8 @@
 /* ========== MEDIA QUERIES (MEDIUM DEVICES) ========== */
 @media screen and (max-width: 1024px) {
     .about__content{
-        margin: 0 6rem !important
+        margin: 0 6rem !important;
+        text-align: center;
     }
     .about__content > h1 {
         font-size: 3rem;
