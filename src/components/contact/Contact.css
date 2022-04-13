@@ -13,19 +13,19 @@
     backdrop-filter: blur(20px);
     z-index: 2;
     color: var(--color-white);
-    padding: 2rem;
+    padding-bottom: 3rem;
+    padding-top: 2rem;
     text-align: center;
     display: block;
     margin-left: auto;
     margin-right: auto;
     width: 25rem;
-    height: 35rem;
+    height: max-content;
     margin-top: 8rem;
     margin-bottom: 2rem;
 }
 
 .contact__container > h2 {
-    padding-top: 2rem;
     font-size: 2rem;
 }
 
@@ -34,6 +34,7 @@
     align-items: center;
     gap: 5px;
     cursor: pointer;
+    padding-bottom: 5px;
 }
 
 .contact__icons > a {
@@ -55,14 +56,14 @@
     flex-direction: column;
     gap: 1rem;
     align-items: center;
-    color: var(--color-white);
+    color: var(--color-bg);
 }
 
 .contact__follow {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    color: var(--color-white) !important;
+    color: var(--color-bg) !important;
     align-items: center;
 }
 
@@ -70,9 +71,12 @@
 @media screen and (max-width: 600px) {
     .contact__container{
         width: 20rem;
-        height: 30rem;
+        height: fit-content;
+        margin-top: 7rem;
+        padding: 1rem;
     }
     .contact__container > h2 {
-        padding-top: 0;
+        padding-top: 0.5rem;
+        font-size: 1.5rem;
     }
 }

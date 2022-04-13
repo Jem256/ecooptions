@@ -9,7 +9,7 @@ import {FiInstagram} from 'react-icons/fi'
 import {IoLogoTwitter} from 'react-icons/io'
 import green from '../../images/green.jpg'
 
-function Bundle() {
+function Contact() {
   return (
     <div className='contact'>
       <img src={green} alt="" />
@@ -53,6 +53,9 @@ function Bundle() {
             <a href='https://instagram.com/ecooptions_?igshid=YmMyMTA2M2Y=' target='_blank'>Instagram</a>
           </article>
         </div>
+
+        <h2>Address</h2>
+        <p className='contact__follow'>Nakibinge Road, Namungoona, Kampala</p>
         
       </div>
 
@@ -60,4 +63,4 @@ function Bundle() {
   )
 }
 
-export default Bundle
+export default Contact
