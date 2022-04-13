@@ -29,12 +29,12 @@ function Bundle() {
             
           <article className="contact__icons">
             <BsWhatsapp/>
-            <a href="https://api.whatsapp/send?phone+256761297958" target='_blank'>WhatsApp</a>
+            <a href="https://wa.me/message/Z7GXRBF2SR37O1" target='_blank'>WhatsApp</a>
           </article>
-          <article className="contact__icons">
+          {/* <article className="contact__icons">
             <RiMessengerLine/>
             <a href="https://m.me/jemimah.nagasha" target='_blank'>Messenger</a>
-          </article>
+          </article> */}
       
         </div>
 
@@ -50,7 +50,7 @@ function Bundle() {
           </article>
           <article className="contact__icons">
             <FiInstagram/>
-            <a href='https://instagram.com/ecooptions_' >Instagram</a>
+            <a href='https://instagram.com/ecooptions_?igshid=YmMyMTA2M2Y=' target='_blank'>Instagram</a>
           </article>
         </div>
         

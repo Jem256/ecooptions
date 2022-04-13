@@ -1,6 +1,6 @@
 import React from 'react'
 import './Shop.css'
-import Product from '../product/Product'
+import ProductCard from '../product/ProductCard'
 import IMG1 from '../../images/cup.png'
 import IMG2 from '../../images/disc.png'
 import IMG3 from '../../images/panty.jpg'
@@ -14,33 +14,33 @@ function Shop() {
       <div className="shop__container">
 
         <div className="shop__header">
-          <h1>
+          {/* <h1>
             to go with your flow <br />
-          </h1>
+          </h1> */}
         </div>
 
         <div className='shop__row'>
-          <Product 
+          <ProductCard 
             id="1"
             title="Menstrual Cup"
             price={50}
             image={IMG1}
           />
 
-          <Product 
+          <ProductCard 
             id="2"
             title="Menstrual Disc"
             price={50000}
             image={IMG2}
           />
-          <Product 
+          <ProductCard 
             id="3"
             title="Menstrual Underwear"
             price={50000}
             image={IMG3} 
           />
 
-          <Product 
+          <ProductCard 
             id="4"
             title="Heat Patches"
             price={15000}

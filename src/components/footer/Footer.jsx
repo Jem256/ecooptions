@@ -20,9 +20,9 @@ function Footer() {
         </ul>
         <ul className="permalinks">
           <h2>HELP</h2>
-          <li><Link to="/about">FAQ</Link></li>
-          <li><Link to="/shop">Quiz</Link></li>
-          <li><Link to="/blog">Refund and Returns Policy</Link></li>
+          {/* <li><Link to="/shop">Quiz</Link></li> */}
+          <li><Link to="/orders-shipping">Orders and Shipping</Link></li>
+          <li><Link to="/refunds">Refund and Returns</Link></li>
         </ul>
         <ul className="permalinks subscribe">
           <h2>JOIN THE FLOW</h2>
@@ -40,9 +40,9 @@ function Footer() {
           <img src={logo} alt="" className='menu__logo' />
         </Link>
         <div className="footer__socials">
-          <a to="https://facebook.com"><FaFacebookF/></a>
-          <a to="https://instagram.com"><FiInstagram/></a>
-          <a to="https://twitter.com"><IoLogoTwitter/></a>
+          <a href="https://www.facebook.com/EcoOptions/" target='_blank'><FaFacebookF/></a>
+          <a href="https://instagram.com/ecooptions_?igshid=YmMyMTA2M2Y=" target='_blank'><FiInstagram/></a>
+          <a href="https://twitter.com/EcoOptions_" target='_blank'><IoLogoTwitter/></a>
         </div>
       </div>
     </footer>

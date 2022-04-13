@@ -1,4 +1,4 @@
-import React, { useEffect, Fragment } from 'react';
+import React from 'react';
 import './App.css'
 import Menu from './components/menu/Menu';
 import About from './components/about/About';
@@ -7,10 +7,11 @@ import Home from './components/home/Home';
 import Shop from './components/shop/Shop';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Footer from './components/footer/Footer';
-import { useStateValue } from "./StateProvider";
 import Cart from './components/cart/Cart';
 import AddressForm from './components/checkout/AddressForm';
 import ScrollToTop from './components/scrollToTop'
+import Refund from './components/policies/Refund';
+import Orders from './components/policies/Orders';
 
 function App() {
  
@@ -20,6 +21,14 @@ function App() {
       <Menu/>
 
       <Switch>
+        <Route path='/refunds'>
+          <Refund/>
+        </Route>
+
+        <Route path='/orders-shipping'>
+          <Orders/>
+        </Route>
+
         <Route path='/about'>
           <About/>
         </Route>
