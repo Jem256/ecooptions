@@ -8,12 +8,12 @@
 
 .shop__container{
     background: var(--color-bg-variant);
-    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.2);
     border-radius: 1rem;
     backdrop-filter: blur(20px);
     z-index: 2;
     color: var(--color-primary);
-    padding: 1rem;
+    padding: 3rem;
+    margin-top: 4rem;
 }
 
 .shop__header > h1 {
@@ -26,9 +26,8 @@
     margin-top: 0;
     display: grid;
     grid-template-columns: repeat(3, 0.5fr);
-    
     justify-content: center;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 
 
@@ -40,6 +39,9 @@
     }
     .shop__header{
         margin-top: 5rem;
+    }
+    .shop__container{
+        margin-top: -1rem;
     }
 }
 

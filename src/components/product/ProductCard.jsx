@@ -4,8 +4,8 @@ import { useStateValue } from "../../StateProvider"
 import { HiMinusSm } from 'react-icons/hi'
 import { HiPlusSm } from 'react-icons/hi'
 
-function ProductCard({title, image, price, rating, id}) {
-    const [ dispatch] = useStateValue();
+function ProductCard({title, image, price, desc, id}) {
+    const [{basket}, dispatch] = useStateValue();
 
     const addToBasket = () => {
         dispatch({
@@ -15,7 +15,7 @@ function ProductCard({title, image, price, rating, id}) {
                 title: title,
                 image: image,
                 price: price,
-                rating: rating,
+                desc: desc,
                 key: id+1
             }
         })
@@ -36,27 +36,27 @@ function ProductCard({title, image, price, rating, id}) {
             <div className="productCard__container">
                 <div className="productCard__card">
                     <div className="productCard__image">
-                        <img src={image} alt="" />
+                        <img src={image} width={400} height={300} alt={title} />
 
                     </div>
                     <div className="text">
                         <h3>{title}</h3>
-                        <div className="productCard__variation">
+                        {/* <div className="productCard__variation">
                             <span>250g</span>
                             <span>500g</span>
                             <span>1000g</span>
-                        </div>
+                        </div> */}
                         <div className="price">
                             <h3>UGX {price}</h3>
-                            <div className="qty">
+                            {/* <div className="qty">
                                 <i onClick={DecBag}><HiMinusSm/></i>
                                 <p>{addcart}</p>
                                 <i onClick={AddCart}><HiPlusSm/></i>
-                            </div>
+                            </div> */}
                         </div>
                         <div className="description">
                             <h5>Description</h5>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                            <p>{desc}</p>
                         </div>
                         <div className="last_section">
                             <button onClick={addToBasket}>Add to cart</button>

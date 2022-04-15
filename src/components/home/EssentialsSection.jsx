@@ -3,6 +3,7 @@ import './EssentialsSection.css'
 import IMG1 from '../../images/cup.png'
 import IMG2 from '../../images/disc.png'
 import IMG3 from '../../images/panty.jpg'
+import {Link} from 'react-router-dom'
 
 function EssentialsSection() {
 
@@ -38,7 +39,9 @@ function EssentialsSection() {
                 <article key={id} className="essentials__item">
                   <div className="essentials__item-imgcard">
                     <div className="essentials__item-image">
-                    <img src={image} alt={title} />
+                      <Link to='/shop'>
+                        <img src={image} alt={title} />
+                      </Link>
                     </div>
                   </div>
                   <h3>{title}</h3>

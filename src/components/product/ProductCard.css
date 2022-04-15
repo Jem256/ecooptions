@@ -1,5 +1,4 @@
 .productCard__container {
-    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center
@@ -11,6 +10,7 @@
     background-color: var(--color-white);
     border-radius: 1rem;
     padding: 1rem;
+    margin-top: 1rem;
 }
 
 .productCard__image {
@@ -55,7 +55,7 @@
 }
 
 .price {
-    margin-top: 0.8rem;
+    margin-top: 0;
     display: flex;
     justify-content: space-between;
     align-items: center
@@ -84,7 +84,7 @@
 }
 
 .description {
-    margin-top: 10px
+    margin-top: 0;
 }
 
 .description > p {
