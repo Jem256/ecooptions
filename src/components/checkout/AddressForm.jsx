@@ -1,17 +1,29 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import "./AddressForm.css";
-import { useFlutterwave, closePaymentModal } from "flutterwave-react-v3";
-import { getBasketTotal } from "../../reducer";
-import { defaultFlutterConfig } from "../../flutterConfig";
-import { useStateValue } from "../../StateProvider";
+//import { useFlutterwave, closePaymentModal } from "flutterwave-react-v3";
+//import { defaultFlutterConfig } from "../../flutterConfig";
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore'
 import db from '../../firebase'
+import { connect } from "react-redux";
+import CartItem from "../cart/CartItem";
 // import emailjs from '@emailjs/browser'
 
 
-const AddressForm = () => {
+const AddressForm = ({cart}) => {
+  const [totalPrice, setTotalPrice] = useState(0);
+
+  useEffect(() => {
+    let price = 0;
+
+    cart.forEach((item) => {
+      price += item.qty * item.price;
+    });
+
+    setTotalPrice(price);
+  }, [cart, totalPrice, setTotalPrice]);
+
   const initialFormData = {
     email: "",
     firstName: "",
@@ -21,30 +33,16 @@ const AddressForm = () => {
   };
 
   const { register } = useForm();
-  const [{ basket }, dispatch] = useStateValue();
   const [formData, setFormData] = useState(initialFormData);
-  const [flutterConfig, setflutterConfig] = useState(defaultFlutterConfig);
+  //const [flutterConfig, setflutterConfig] = useState(defaultFlutterConfig);
 
   const onChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  // const form = useRef();
-
-  // const sendEmail = (e) => {
-  //   e.preventDefault();
-
-  //   emailjs.sendForm('service_8we25mm', 'template_9rzwtnp', form.current, '0fSca5SaAUtaCf93w')
-  //     .then((result) => {
-  //       console.log(result.text);
-  //     }, (error) => {
-  //       console.log(error.text);
-  //     });
-  // }
-
   async function addData(){
     await addDoc(collection(db, 'orders'), {
-      basket: basket,
+      basket: cart,
       customer: formData.firstName,
       email: formData.email,
       phoneNumber: formData.phoneNumber,
@@ -54,38 +52,32 @@ const AddressForm = () => {
     })
   }
 
-  const emptyCart = () => {
-        dispatch({
-            type: 'EMPTY_BASKET',
-            basket: basket,
-        })
-  }
+  // const makePayment = () => {
+  //   setflutterConfig({
+  //     ...flutterConfig,
+  //     amount:totalPrice,
+  //     customer: {
+  //       email: formData.email,
+  //       phoneNumber: formData.phoneNumber,
+  //       name: formData.firstName,
+  //     },
+  //   });
 
-  const makePayment = () => {
-    setflutterConfig({
-      ...flutterConfig,
-      amount: getBasketTotal(basket),
-      customer: {
-        email: formData.email,
-        phoneNumber: formData.phoneNumber,
-        name: formData.firstName,
-      },
-    });
+  //   // let paymentSuccessfull = false;
 
-    // let paymentSuccessfull = false;
+  //   handleFlutterPayment({
+  //     callback: (response) => {
+  //       console.log(response);    
 
-    handleFlutterPayment({
-      callback: (response) => {
-        console.log(response);    
-
-        closePaymentModal(); // this will close the modal programmatically
-      },
-      onClose: () => {}
-    }).then(addData())
+  //       closePaymentModal(); // this will close the modal programmatically
+  //     },
+  //     onClose: () => {}
+  //   })
+  //   addData();
     
-  };
+  // };
 
-  const handleFlutterPayment = useFlutterwave(flutterConfig);
+  //const handleFlutterPayment = useFlutterwave(flutterConfig);
 
 
   return (
@@ -148,7 +140,7 @@ const AddressForm = () => {
           </button>
         </Link>
         <button
-          onClick={makePayment}
+          onClick={addData}
           type="submit"
           variant="contained"
           className="btn btn-primary checkout__button"
@@ -160,4 +152,10 @@ const AddressForm = () => {
   );
 };
 
-export default AddressForm;
+const mapStateToProps = (state) => {
+  return {
+    cart: state.shop.cart,
+  };
+};
+
+export default connect(mapStateToProps)(AddressForm);

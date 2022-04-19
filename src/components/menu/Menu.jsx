@@ -1,14 +1,22 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import './Menu.css'
 import logo from '../../images/logoEC.png'
-import {AiOutlineSearch} from 'react-icons/ai'
 import {MdOutlineShoppingBag} from 'react-icons/md'
 import MobileMenu from './MobileMenu'
 import { Link } from 'react-router-dom'
-import { useStateValue } from '../../StateProvider'
+import {connect} from 'react-redux'
 
-function Menu() {
-    const [{basket}] = useStateValue();
+function Menu({cart}) {
+    const [cartCount, setCartCount] = useState(0);
+
+    useEffect(() => {
+        let count = 0;
+        cart.forEach((item) => {
+            count += item.qty;
+        });
+
+        setCartCount(count);
+    }, [cart, cartCount]);
 
   return (
     <div className="menu__container">
@@ -39,7 +47,7 @@ function Menu() {
                     <div className="menu__basket menu__icons">
                         <MdOutlineShoppingBag />
                         <span className="menu__basketCount">
-                            {basket?.length}
+                            {cartCount}
                         </span>
                     </div>
                 </Link>
@@ -50,4 +58,10 @@ function Menu() {
   )
 }
 
-export default Menu
+const mapStateToProps = (state) => {
+    return{
+        cart: state.shop.cart,
+    }
+}
+
+export default connect(mapStateToProps)(Menu);

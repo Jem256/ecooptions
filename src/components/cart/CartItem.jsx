@@ -1,49 +1,70 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './CartItem.css'
-// import StarOutlineIcon from '@mui/icons-material/StarOutline';
-import { useStateValue } from "../../StateProvider";
+import {RiDeleteBin6Line} from 'react-icons/ri'
 
-function CartItem({id, image, title, price, rating, hideButton}) {
-    const[{ basket }, dispatch] = useStateValue();
+import { connect } from "react-redux";
+import {
+  adjustItemQty,
+  removeFromCart,
+} from "../../redux/shopping/shoppingActions";
 
-    const removeFromBasket = () => {
-        // remove from basket
-        dispatch({
-            type: 'REMOVE_FROM_BASKET',
-            id: id,
-        })
-    }
+
+function CartItem({item, adjustQty, removeFromCart}) {
+    const [input, setInput] = useState(item.qty);
+
+    const onChangeHandler = (e) => {
+        setInput(e.target.value);
+        adjustQty(item.id, e.target.value);
+    };
 
     return (
         <div className='cart-item'>
-            <img className='cart-item__image' src={image} alt='' />
 
-            <div className='cart-item__details'>
-                <p className='cart-item__title'>{title}</p>
-                <p className='checkoutProduct__price'>
-                    <small>UGX</small>
-                    <strong>{price}</strong>
-                </p>
-                {/* <div className='checkoutProduct__rating'>
-                    {Array(rating).fill().map(
-                        (_, i) => (
-                            <p><StarOutlineIcon/></p>
-                        )
-                    )}
-                </div> */}
-                {!hideButton && (
-                    <button
-                        type="button"
-                        className="cart-item__remove btn"
-                        onClick={removeFromBasket}
-                    >
-                        Remove
-                    </button>
-                )}
-                
+            <div className="details">
+                <img className='cart-item__image' src={item.image} alt={item.title} />
+                <div className="cart-item__desc">
+                    <p className='cart-item__details-title'>{item.title}</p>
+                    <div className="remove">
+                        <button
+                            type="button"
+                            className="cart-item__remove"
+                            onClick={()=>removeFromCart(item.id)}
+                        >
+                            <RiDeleteBin6Line className='cart-item__removeIcon'/>
+                        </button>
+                    </div>
+                </div>
             </div>
+
+            <div className="other">
+                <div className="cart-item__details-qty more">
+                    <input
+                        min="1"
+                        type="number"
+                        id="qty"
+                        name="qty"
+                        value={input}
+                        onChange={onChangeHandler}
+                    />  
+                </div>
+
+                <p className='cart-item__details-price'>
+                    <strong>UGX {item.price}</strong>
+                </p>
+            </div>
+
+
+                
+            
         </div>
     )
 }
 
-export default CartItem
+const mapDispatchToProps = (dispatch) => {
+  return {
+    adjustQty: (id, value) => dispatch(adjustItemQty(id, value)),
+    removeFromCart: (id) => dispatch(removeFromCart(id)),
+  };
+};
+
+export default connect(null, mapDispatchToProps)(CartItem);

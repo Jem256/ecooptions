@@ -1,128 +1,127 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import "./Cart.css";
 import CurrencyFormat from "react-currency-format";
-import { useStateValue } from '../../StateProvider';
-import { getBasketTotal } from '../../reducer';
 import CartItem from './CartItem';
 import { Link } from 'react-router-dom'
+import { connect } from "react-redux";
 
 
-function Cart() {
-    const [{basket}, dispatch] = useStateValue();
+function Cart({cart}) {
+    const [totalPrice, setTotalPrice] = useState(0);
+    const [totalItems, setTotalItems] = useState(0);
+    // const [discount, setDiscount] = useState('');
 
-    const emptyCart = () => {
-        dispatch({
-            type: 'EMPTY_BASKET',
-            basket: basket,
-        })
-    }
+    useEffect(() => {
+        let items = 0;
+        let price = 0;
 
-    const renderEmptyMessage = () => {
-        if (basket.length > 0) {
-            return;
+        cart.forEach((item) => {
+        items += item.qty;
+        price += item.qty * item.price;
+        });
+
+        setTotalItems(items);
+        setTotalPrice(price);
+    }, [cart, totalPrice, totalItems, setTotalPrice, setTotalItems]);
+
+    const renderItems = () => {
+        if (totalItems > 0) {
+            return(
+                cart.map((item) => (
+                    <CartItem
+                    key={item.id}
+                    item={item}
+                    />
+                ))
+            )
+        } else {
+            return(
+                <p className='cart__none'>
+                    You have no items in your shopping cart. 
+                    <Link to='/shop'> Start adding some!</Link>
+                </p>
+            )
         }
 
-        return(
-            <p className='cart__none'>
-                You have no items in your shopping cart. 
-                <Link to='/shop'> Start adding some!</Link>
-            </p>
-        )
     }
 
-    const renderItems = () => (
-        basket.map(item => (
-            <CartItem
-              id={item.id}
-              title={item.title}
-              image={item.image}
-              price={item.price}
-              rating={item.rating}
-            />
-        ))
+    // const onDiscount = (e) => {
+    //     let code = 'THANKS5OFF'
+    //     let alpha = /\w/g;
+    //     let result = code.match(alpha)
+    //     let newTotal = 0
+
+    //     if (result === discount){
+    //         return(
+    //             newTotal += totalPrice*0.95
+    //         )
+    //     }
+    //     else {
+    //         return(
+    //             <p>Invalid Code</p>
+    //         )
+    //     }
+
+    // }
+
+    const renderDiscount = () => (
+        <div className="cart__total">
+            <p className="cart__total-title"> Dicount Code:</p>
+            <form>
+                <input 
+                className='cart__discount'
+                name="discount"
+                placeholder="Enter Dicount Code"
+                type="text"
+                />
+                <button type='submit' className="cart__btn-checkout btn">Apply</button>
+            </form>
+        </div>
     )
 
-    const coupon = () => {
-        
-    }
-
-    
-    // const renderDiscount = () => (
-    //     <div className="cart__total">
-    //         <p className="cart__total-title"> Dicount Code:</p>
-    //         <form>
-    //             <input 
-    //             className='cart__discount'
-    //             name="discount"
-    //             placeholder="Enter Dicount Code"
-    //             type="text"
-    //             />
-    //             <button type='submit' className="cart__btn-checkout btn">Apply</button>
-    //         </form>
-    //     </div>
-    // )
-
-    
-    // const finalPrice = () => {
-    //     if (renderDiscount()) {
-    //         return(
-    //             <CurrencyFormat 
-    //             renderText={(value) =>(
-    //                 <>
-    //                     <p>
-    //                         ({basket.length} items): <strong>{value}</strong>
-    //                     </p>
-    //                 </>
-    //             )}
-    //             decimalScale={2}
-    //             value={getBasketTotal(basket)*0.95}
-    //             displayType={"text"}
-    //             thousandSeparator={true}
-    //             prefix={'UGX'}
-    //             />
-    //             )
-    //         }
-            
-    //         return(
-    //             )
-    //         }
-            
-            const renderTotal = () => (
-                <div className="cart__total">
-                <p className="cart__total-title"> Subtotal:</p>
-                <p className="cart__total-price">
-                    <CurrencyFormat 
+    const renderTotal = () => (
+        <div className="cart__total">
+            <p className="cart__total-title"> Subtotal:</p>
+            <p className="cart__total-price">
+                <CurrencyFormat 
                     renderText={(value) =>(
-                        <>
-                            <p>
-                                ({basket.length} items): <strong>{value}</strong>
-                            </p>
-                        </>
+                        <span>
+                            
+                            ({totalItems} items): <strong>{value}</strong>
+                            
+                        </span>
                     )}
                     decimalScale={2}
-                    value={getBasketTotal(basket)}
+                    value={totalPrice}
                     displayType={"text"}
                     thousandSeparator={true}
                     prefix={'UGX'}
-                    />
-                </p>
-            </div>
-        )
-        
-        return (
+                />
+            </p>
+        </div>
+    )
+
+    return (
         <div className='cart'>
             <h4 className='cart__heading'>Your Shopping Cart</h4>
-            { renderEmptyMessage() }
             { renderItems() }
+            { renderDiscount() }
             { renderTotal() }
             <div className="cart__footer">
-                <button className="cart__btn-empty btn" onClick={emptyCart}>Empty cart</button>
                 <Link to='/checkout'>
-                    <button className="cart__btn-checkout btn">Checkout</button> 
+                    <button className="cart__btn-checkout btn">Proceed To Checkout</button> 
                 </Link>
             </div>
         </div>
     )
+            
+        
 }
 
-export default Cart
+const mapStateToProps = (state) => {
+  return {
+    cart: state.shop.cart,
+  };
+};
+
+export default connect(mapStateToProps)(Cart);
