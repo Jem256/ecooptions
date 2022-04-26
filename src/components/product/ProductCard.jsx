@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import './ProductCard.css'
 
 // Redux
@@ -20,8 +20,8 @@ function ProductCard({product, addToCart, loadCurrentItem}) {
                         <img src={product.image} width={400} height={300} alt={product.title} />
 
                     </div>
-                    <div className="text">
-                        <h3>{product.title}</h3>
+                    <div className="productCard__info">
+                        <h3 className="productCard__title">{product.title}</h3>
                         {/* <div className="productCard__variation">
                             <span>250g</span>
                             <span>500g</span>

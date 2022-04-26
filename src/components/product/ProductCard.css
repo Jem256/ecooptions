@@ -4,10 +4,17 @@
     align-items: center
 }
 
+.productCard > h3 {
+    text-transform: capitalize;
+}
+
 .productCard__card {
     height: max-content;
     width: 320px;
+    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(15px);
     background-color: var(--color-white);
+    z-index: 1;
     border-radius: 1rem;
     padding: 1rem;
     margin-top: 1rem;
@@ -61,7 +68,7 @@
     align-items: center
 }
 
-.qty {
+/* .qty {
     display: flex;
     height: 40px;
     width: 80px;
@@ -81,7 +88,7 @@
     margin-top: 4px;
     cursor: pointer;
     transition: all 0.5s
-}
+} */
 
 .description {
     margin-top: 0;

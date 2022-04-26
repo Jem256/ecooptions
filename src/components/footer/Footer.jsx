@@ -24,14 +24,14 @@ function Footer() {
           <li><Link to="/orders-shipping">Orders and Shipping</Link></li>
           <li><Link to="/refunds">Refund and Returns</Link></li>
         </ul>
-        <ul className="permalinks subscribe">
+        {/* <ul className="permalinks subscribe">
           <h2>JOIN THE FLOW</h2>
           <h3>Subscribe to our Mailing List!</h3>
           <div className="footer__mail">
             <input className='btn' type="email" placeholder='Enter Your Email Address' />
             <h3 className='btn btn-primary'>Sign Up</h3>
           </div>
-        </ul>
+        </ul> */}
       </div>
 
 

@@ -3,6 +3,7 @@ import './Shop.css'
 import ProductCard from '../product/ProductCard'
 // Redux
 import { connect } from "react-redux";
+import green from '../../images/white.jpg'
 
 function Shop({products}) {
   return (

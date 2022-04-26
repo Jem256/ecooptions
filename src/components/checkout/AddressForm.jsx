@@ -1,19 +1,20 @@
-import React, { useState, useEffect, useRef } from "react";
-import { useForm } from "react-hook-form";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { useForm } from "react-hook-form";
 import "./AddressForm.css";
-//import { useFlutterwave, closePaymentModal } from "flutterwave-react-v3";
-//import { defaultFlutterConfig } from "../../flutterConfig";
+import { useFlutterwave, closePaymentModal } from "flutterwave-react-v3";
+import { defaultFlutterConfig } from "../../flutterConfig";
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore'
 import db from '../../firebase'
 import { connect } from "react-redux";
-import CartItem from "../cart/CartItem";
 // import emailjs from '@emailjs/browser'
 
 
 const AddressForm = ({cart}) => {
+  const { register, handleSubmit } = useForm();
+  const [data, setData] = useState('');
   const [totalPrice, setTotalPrice] = useState(0);
-
+  
   useEffect(() => {
     let price = 0;
 
@@ -23,7 +24,7 @@ const AddressForm = ({cart}) => {
 
     setTotalPrice(price);
   }, [cart, totalPrice, setTotalPrice]);
-
+    
   const initialFormData = {
     email: "",
     firstName: "",
@@ -32,60 +33,59 @@ const AddressForm = ({cart}) => {
     city: "",
   };
 
-  const { register } = useForm();
   const [formData, setFormData] = useState(initialFormData);
-  //const [flutterConfig, setflutterConfig] = useState(defaultFlutterConfig);
+  const [flutterConfig, setflutterConfig] = useState(defaultFlutterConfig);
 
   const onChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  async function addData(){
-    await addDoc(collection(db, 'orders'), {
-      basket: cart,
-      customer: formData.firstName,
-      email: formData.email,
-      phoneNumber: formData.phoneNumber,
-      address: formData.address,
-      city: formData.city,
-      timestamp: serverTimestamp()
+  const makePayment = () => {
+    setflutterConfig({
+      ...flutterConfig,
+      amount:totalPrice,
+      customer: {
+        email: formData.email,
+        phoneNumber: formData.phoneNumber,
+        name: formData.firstName,
+      },
+    });
+
+    handleFlutterPayment({
+      callback: (response) => {
+        console.log(response);    
+        
+        closePaymentModal(); // this will close the modal programmatically
+
+        
+      },
+      onClose: () => {
+        addDoc(collection(db, 'orders'), {
+          customer: formData.firstName,
+          email: formData.email,
+          phoneNumber: formData.phoneNumber,
+          address: formData.address,
+          city: formData.city,
+          amount: totalPrice,
+          productId: cart.map((item) => item.id),
+          productTitle: cart.map((item) => item.title),
+          productQty: cart.map((item) => item.qty),
+          timestamp: serverTimestamp(),
+        })
+      }
     })
-  }
-
-  // const makePayment = () => {
-  //   setflutterConfig({
-  //     ...flutterConfig,
-  //     amount:totalPrice,
-  //     customer: {
-  //       email: formData.email,
-  //       phoneNumber: formData.phoneNumber,
-  //       name: formData.firstName,
-  //     },
-  //   });
-
-  //   // let paymentSuccessfull = false;
-
-  //   handleFlutterPayment({
-  //     callback: (response) => {
-  //       console.log(response);    
-
-  //       closePaymentModal(); // this will close the modal programmatically
-  //     },
-  //     onClose: () => {}
-  //   })
-  //   addData();
     
-  // };
+  };
 
-  //const handleFlutterPayment = useFlutterwave(flutterConfig);
+  const handleFlutterPayment = useFlutterwave(flutterConfig);
 
 
   return (
     <div className="addressForm">
       <h2 className="header">
-        Delivery Address
+        Billing Details
       </h2>
-      <form>
+      <form onSubmit={handleSubmit((data) => setData(JSON.stringify(data)))}>
         <input
           name="firstName"
           placeholder="First Name"
@@ -140,15 +140,17 @@ const AddressForm = ({cart}) => {
           </button>
         </Link>
         <button
-          onClick={addData}
           type="submit"
           variant="contained"
           className="btn btn-primary checkout__button"
+          onClick={makePayment}
         >
           Make Payment
         </button>
       </div>
     </div>
+
+    // cart summary
   );
 };
 

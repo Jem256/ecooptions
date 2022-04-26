@@ -1,5 +1,5 @@
 .addressForm {
-    background-color: var(--color-primary-variant);
+    background-color: var(--color-light);
     border-radius: 1rem;
     backdrop-filter: blur(20px);
     z-index: 2;
@@ -38,6 +38,17 @@
     border-bottom: 1px solid whitesmoke;
     border-radius: 5px;
     outline: none;
+}
+
+.order {
+    display: none;
+}
+
+.form__error {
+    background-color: white;
+    color: red;
+    text-align: right;
+    padding: 2px;
 }
 
 /* ========== MEDIA QUERIES (MEDIUM DEVICES) ========== */

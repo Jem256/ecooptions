@@ -45,25 +45,6 @@ function Cart({cart}) {
 
     }
 
-    // const onDiscount = (e) => {
-    //     let code = 'THANKS5OFF'
-    //     let alpha = /\w/g;
-    //     let result = code.match(alpha)
-    //     let newTotal = 0
-
-    //     if (result === discount){
-    //         return(
-    //             newTotal += totalPrice*0.95
-    //         )
-    //     }
-    //     else {
-    //         return(
-    //             <p>Invalid Code</p>
-    //         )
-    //     }
-
-    // }
-
     const renderDiscount = () => (
         <div className="cart__total">
             <p className="cart__total-title"> Dicount Code:</p>
@@ -105,7 +86,7 @@ function Cart({cart}) {
         <div className='cart'>
             <h4 className='cart__heading'>Your Shopping Cart</h4>
             { renderItems() }
-            { renderDiscount() }
+            {/* { renderDiscount() } */}
             { renderTotal() }
             <div className="cart__footer">
                 <Link to='/checkout'>

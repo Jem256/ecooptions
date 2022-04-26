@@ -7,12 +7,12 @@ import {RiMessengerLine} from 'react-icons/ri'
 import {FaFacebookF} from 'react-icons/fa'
 import {FiInstagram} from 'react-icons/fi'
 import {IoLogoTwitter} from 'react-icons/io'
-import green from '../../images/green.jpg'
+import green from '../../images/white.jpg'
 
 function Contact() {
   return (
     <div className='contact'>
-      <img src={green} alt="" />
+      {/* <img src={green} alt="" /> */}
 
       <div className="contact__container">
         <h2>Get In Touch</h2>
