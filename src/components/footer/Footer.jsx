@@ -20,7 +20,7 @@ function Footer() {
         </ul>
         <ul className="permalinks">
           <h2>HELP</h2>
-          {/* <li><Link to="/shop">Quiz</Link></li> */}
+          <li><Link to="/faqs">FAQs</Link></li>
           <li><Link to="/orders-shipping">Orders and Shipping</Link></li>
           <li><Link to="/refunds">Refund and Returns</Link></li>
         </ul>

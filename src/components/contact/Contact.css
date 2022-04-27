@@ -6,12 +6,9 @@
     z-index: -1;
     margin-top: -4rem;
 }
-.contact {
-    background: var(--color-bg-variant);
-    overflow: hidden;
-}
+
 .contact__container {
-    box-shadow: inset 0 0 0 2000px rgba(200, 200, 200, 0.5);
+    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.1);
     border-radius: 1rem;
     backdrop-filter: blur(20px);
     z-index: 2;

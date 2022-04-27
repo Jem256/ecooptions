@@ -28,8 +28,8 @@ function EssentialsSection() {
     <section className="home__essentials">
         <h5>our essentials</h5>
         <h2>
-            No Plastic.
-            Period.
+          No Plastic.
+          Period.
         </h2>
 
         <div className="container essentials__container">

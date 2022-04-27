@@ -12,7 +12,7 @@ import green from '../../images/white.jpg'
 function Contact() {
   return (
     <div className='contact'>
-      {/* <img src={green} alt="" /> */}
+      <img src={green} alt="" />
 
       <div className="contact__container">
         <h2>Get In Touch</h2>

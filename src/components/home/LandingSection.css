@@ -10,7 +10,7 @@
 }
 
 .landingSection__text {
-    margin-top: 18rem;
+    margin-top: 10rem;
     text-align: center;
 }
 
@@ -21,34 +21,21 @@
     align-items: center;
 }
 
-.animation > h1 {
-    text-transform: capitalize;
+.animation > h2 {
+    padding-bottom: 2rem;
+    font-size: 4rem;
     text-align: center;
-    font-size: 10vh;
+    text-transform: capitalize;
     color: var(--color-primary);
     padding-bottom: 2rem;
-    white-space: nowrap;
     overflow: hidden;
     width: 100%;
-    animation: title 3s steps(70, end); 
+    animation: title 3s steps(100, end); 
 }
 /* The typing effect */
 @keyframes title {
   from { width: 0; opacity: 0.3;}
   to { opacity: 1.0; } 
-}
-
-/* The typewriter cursor effect */
-/* @keyframes blink-caret {
-  from, to { border-color: transparent }
-  50% { border-color: var(--color-primary); }
-} */
-
-.animation > h2 {
-    margin-top: 10px;
-    text-transform: uppercase;
-    color: var(--color-primary);
-    
 }
 
 .landingSection__text > .btn {
@@ -57,9 +44,9 @@
 
 /* ========== MEDIA QUERIES (MEDIUM DEVICES) ========== */
 @media screen and (max-width: 1024px) {
-    .animation > h1 {
+    .animation > h2 {
       font-size: 8vh;
-      margin-top: -150px;
+      line-height: 1.2;
     }
     .landingSection__container{
         margin-top: 1rem;
@@ -68,14 +55,11 @@
 
 /* ========== MEDIA QUERIES (SMALL DEVICES) ========== */
 @media screen and (max-width: 600px) {
-    .animation > h1 {
-        font-size: 6.5vh;
+    .animation > h2 {
+        font-size: 3rem;
         font-weight: 500 !important;
         margin-top: -100px;
-    }
-  
-    .animation > h2 {
-        font-size: 1rem !important;
+        line-height: 1.2;
     }
 
     .landingSection__text {

@@ -12,8 +12,7 @@
     height: max-content;
     width: 320px;
     box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(15px);
-    background-color: var(--color-white);
+    backdrop-filter: blur(20px);
     z-index: 1;
     border-radius: 1rem;
     padding: 1rem;
@@ -95,7 +94,8 @@
 }
 
 .description > p {
-    font-size: 11px
+    font-size: 12px;
+    font-weight: 400;
 }
 
 .last_section {

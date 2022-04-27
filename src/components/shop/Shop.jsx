@@ -8,7 +8,7 @@ import green from '../../images/white.jpg'
 function Shop({products}) {
   return (
     <div className='shop'>
-      {/* <img src={green} alt="" /> */}
+      <img src={green} alt="" />
       
       <div className="shop__container">
 

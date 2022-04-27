@@ -3,7 +3,8 @@ import './MobileMenu.css'
 import {AiOutlineHome} from 'react-icons/ai'
 import {AiOutlineShoppingCart} from 'react-icons/ai'
 import {AiOutlineWechat} from 'react-icons/ai'
-import {BiMessageSquareDetail} from 'react-icons/bi'
+import {AiOutlineMessage} from 'react-icons/ai'
+import {AiOutlineQuestionCircle} from 'react-icons/ai'
 import { Link } from 'react-router-dom'
 
 function MobileMenu() {
@@ -23,14 +24,20 @@ function MobileMenu() {
           </Link>
         </div>
         <div className="mobileMenu__item">
+          <Link to="/faqs">
+            <AiOutlineQuestionCircle/>
+            <span>FAQs</span>
+          </Link>
+        </div>
+        <div className="mobileMenu__item">
           <Link to="/about">
-            <AiOutlineWechat/>
+            <AiOutlineMessage/>
             <span>About</span>
           </Link>
         </div>
         <div className="mobileMenu__item">
           <Link to="/contact">
-            <BiMessageSquareDetail/>
+            <AiOutlineWechat/>
             <span>Contact</span>
           </Link>
         </div>

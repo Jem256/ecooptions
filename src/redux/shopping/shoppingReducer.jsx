@@ -1,16 +1,18 @@
 import * as actionTypes from './actionTypes'
 import IMG1 from '../../images/cup.png'
-import IMG2 from '../../images/disc.png'
-import IMG3 from '../../images/cup.png'
-import IMG4 from '../../images/disc.png'
+import IMG2 from '../../images/panties.png'
+import IMG3 from '../../images/disc.png'
+import IMG4 from '../../images/patch.png'
+import IMG5 from '../../images/bottle.png'
 
 const INITIAL_STATE = {
     products: [
-        {
+      {
       id: 1,
       title: "Menstrual Cup",
       description: 
         <p>
+          Comes with one cup and one storage container <br />
           100% medical-grade silicone <br />
           Soft and flexible enough for easy insertion <br />
           Firm rim that pops open and creates a leak-free seal <br />
@@ -18,26 +20,28 @@ const INITIAL_STATE = {
         </p>
       ,
       price: 50000,
-      image: IMG1,
+      image: IMG1
     },
     {
       id: 2,
       title: "Menstrual Underwear",
       description:
         <p>
+          Comes with 2 pieces of underwear of any color available <br />
           Absorbent, breathable, hygienic and antibacterial <br />
           Recommended for light flow and for the last days of your period <br />
           Wash by hand or washing machine in cold water <br />
         </p>
       ,
       price: 50000,
-      image: IMG3
+      image: IMG2
     },
     {
       id: 3,
       title: "Menstrual Disc",
       description:
         <p>
+          Comes with one disc and one storage container <br />
           100% medical-grade silicone <br />
           Soft and flexible enough for easy insertion <br />
           Firm rim that keeps it in place and creates a leak-free & suction-free seal <br />
@@ -45,13 +49,14 @@ const INITIAL_STATE = {
         </p>
       ,
       price: 60000,
-      image: IMG2
+      image: IMG3
     },
     {
       id: 4,
-      title: "Heat Patch",
+      title: "Heat Patch (5 Pack)",
       description:
         <p> 
+          Comes in a pack of 5 patches <br />
           Single use heating patches <br />
           Made for menstrual cramps because nothing should cramp your style! <br />
           heat on the go <br />
@@ -60,9 +65,24 @@ const INITIAL_STATE = {
       price: 15000,
       image: IMG4
     },
-    ],
-    cart: [],
-    currentItem: null,
+    {
+      id: 5,
+      title: "Hot Water Bottle",
+      description:
+        <p> 
+          Comes with one bottle and belt <br />
+          Not your regular hot water bottle <br />
+          Reusable hot water bottle for period cramps <br />
+          A hands-free bottle that placed inside the pouch and the belt wrapped around your abdomen <br />
+          No need to hold hold it. <br />
+        </p>
+      ,
+      price: 60000,
+      image: IMG5
+    },
+  ],
+  cart: [],
+  currentItem: null,
 }
 
 const shopReducer = (state = INITIAL_STATE, action) => {

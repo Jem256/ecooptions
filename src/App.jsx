@@ -12,7 +12,7 @@ import AddressForm from './components/checkout/AddressForm';
 import ScrollToTop from './components/scrollToTop'
 import Refund from './components/policies/Refund';
 import Orders from './components/policies/Orders';
-import ThankYou from './components/checkout/thankYou';
+import FAQs from './components/faqs/FAQs';
 
 function App() {
  
@@ -22,8 +22,8 @@ function App() {
       <Menu/>
 
       <Switch>
-        <Route path='/thankyou'>
-          <ThankYou />
+        <Route path='/faqs'>
+          <FAQs />
         </Route>
 
         <Route path='/refunds'>

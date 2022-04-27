@@ -1,5 +1,13 @@
-.about__container {
-    background: var(--color-bg-variant);
+.about > img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: -1;
+    margin-top: 0;
+}
+
+.about {
     overflow: hidden;
     /* box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.1); */
 }

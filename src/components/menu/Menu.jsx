@@ -31,6 +31,9 @@ function Menu({cart}) {
                 <Link to="/shop" className='text'>
                     shop
                 </Link>
+                <Link to="/faqs" className='text'>
+                    FAQs
+                </Link>
                 <Link to="/about" className='text'>
                     About
                 </Link>

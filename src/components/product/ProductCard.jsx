@@ -1,5 +1,6 @@
 import React from "react";
 import './ProductCard.css'
+import Carousel from 'flat-carousel'
 
 // Redux
 import { connect } from "react-redux";
@@ -17,8 +18,7 @@ function ProductCard({product, addToCart, loadCurrentItem}) {
             <div className="productCard__container">
                 <div className="productCard__card">
                     <div className="productCard__image">
-                        <img src={product.image} width={400} height={300} alt={product.title} />
-
+                        <img src={product.image} width={500} height={300} alt={product.title} />
                     </div>
                     <div className="productCard__info">
                         <h3 className="productCard__title">{product.title}</h3>
@@ -33,7 +33,7 @@ function ProductCard({product, addToCart, loadCurrentItem}) {
                         </div>
                         <div className="description">
                             <h5>Description</h5>
-                            {product.description}
+                            <p>{product.description}</p>                            
                         </div>
                         <div className="last_section">
                             <button onClick={()=> addToCart(product.id)}>Add to cart</button>
