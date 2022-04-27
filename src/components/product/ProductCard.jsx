@@ -33,7 +33,7 @@ function ProductCard({product, addToCart, loadCurrentItem}) {
                         </div>
                         <div className="description">
                             <h5>Description</h5>
-                            <p>{product.description}</p>                            
+                            {product.description}                            
                         </div>
                         <div className="last_section">
                             <button onClick={()=> addToCart(product.id)}>Add to cart</button>

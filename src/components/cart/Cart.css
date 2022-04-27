@@ -13,7 +13,15 @@
     width: 45rem;
     height: max-content;
     margin-top: 8rem;
-    margin-bottom: 3rem;
+    margin-bottom: 6rem;
+}
+
+.link {
+    color: var(--color-white);
+}
+
+.link:hover {
+    color: var(--color-bg)
 }
 
 .cart__heading {

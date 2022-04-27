@@ -1,13 +1,18 @@
 import React from 'react'
 import './EssentialsSection.css'
-import IMG1 from '../../images/cup.png'
-import IMG2 from '../../images/disc.png'
+import IMG1 from '../../images/home-cup.png'
+import IMG2 from '../../images/home-disc.png'
 import IMG3 from '../../images/panty.jpg'
 import {Link} from 'react-router-dom'
 
 function EssentialsSection() {
 
     const data = [
+    {
+      id: 3,
+      image: IMG3,
+      title: 'Eco Menstrual Undies' 
+    },
     {
       id: 1,
       image: IMG1,
@@ -18,11 +23,6 @@ function EssentialsSection() {
       image: IMG2,
       title: 'Eco Menstrual Disc' 
     },
-    {
-      id: 3,
-      image: IMG3,
-      title: 'Eco Menstrual Undies' 
-    }
   ]
   return (
     <section className="home__essentials">

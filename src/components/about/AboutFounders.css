@@ -11,7 +11,15 @@
     display: grid;
     grid-template-columns: 35% 50%;
     gap: 15%;
-    margin: 0 10rem;
+    margin: 0 6.5rem !important;
+}
+
+.link {
+    color: var(--color-white);
+}
+
+.link:hover {
+    color: var(--color-bg)
 }
 
 .about__founders-header > h3 {

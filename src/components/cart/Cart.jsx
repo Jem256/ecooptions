@@ -38,7 +38,7 @@ function Cart({cart}) {
             return(
                 <p className='cart__none'>
                     You have no items in your shopping cart. 
-                    <Link to='/shop'> Start adding some!</Link>
+                    <Link to='/shop' className='link' > Start adding some!</Link>
                 </p>
             )
         }

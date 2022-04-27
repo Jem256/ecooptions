@@ -45,7 +45,7 @@ function AboutFounders() {
             </p>
 
             <p>
-              Browse our catalogue to find out what we have to <Link to='/shop'>Offer</Link>
+              Browse our <Link to='/shop' className='link'>catalogue</Link> to find out what we have to Offer
             </p>
             
           </div>
