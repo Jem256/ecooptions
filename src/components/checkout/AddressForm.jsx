@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { useForm } from "react-hook-form";
 import "./AddressForm.css";
 import { useFlutterwave, closePaymentModal } from "flutterwave-react-v3";
 import { defaultFlutterConfig } from "../../flutterConfig";
@@ -11,8 +10,6 @@ import { connect } from "react-redux";
 
 
 const AddressForm = ({cart}) => {
-  const { register, handleSubmit } = useForm();
-  const [data, setData] = useState('');
   const [totalPrice, setTotalPrice] = useState(0);
   
   useEffect(() => {
@@ -85,52 +82,48 @@ const AddressForm = ({cart}) => {
       <h2 className="header">
         Billing Details
       </h2>
-      <form onSubmit={handleSubmit((data) => setData(JSON.stringify(data)))}>
+      <form onSubmit={makePayment}>
         <input
           name="firstName"
           placeholder="First Name"
           type="text"
+          required
           onChange={onChange}
-          {...register("firstName", { required: true })}
         />
         <input
           name="lastName"
           placeholder="Last Name"
           type="text"
           onChange={onChange}
-          {...register("lastName", { required: true })}
         />
         <input
           name="email"
           placeholder="Email"
           type="email"
+          required
           onChange={onChange}
-          {...register("email", { required: true })}
         />
         <input
           name="phoneNumber"
           placeholder="Phone Number"
           type="text"
+          required
           onChange={onChange}
-          {...register("phoneNumber", { required: true })}
         />
         <input
           name="address"
           placeholder="Enter Details of Delivery Address"
           type="text"
+          required
           onChange={onChange}
-          {...register("address", { required: true })}
         />
         <input
           name="city"
           placeholder="City"
           type="text"
+          required
           onChange={onChange}
-          {...register("city", { required: true })}
         />
-      </form>
-      <br />
-      <div style={{ display: "flex", justifyContent: "space-between" }}>
         <Link to='/cart'>
           <button
             variant="outlined"
@@ -147,7 +140,7 @@ const AddressForm = ({cart}) => {
         >
           Make Payment
         </button>
-      </div>
+      </form>
     </div>
 
     // cart summary

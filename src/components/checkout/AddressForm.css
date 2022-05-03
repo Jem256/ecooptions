@@ -40,6 +40,9 @@
     outline: none;
 }
 
+.addressForm > form > button {
+}
+
 .order {
     display: none;
 }

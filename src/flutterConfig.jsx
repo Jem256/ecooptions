@@ -6,7 +6,7 @@ export const defaultFlutterConfig = {
   tx_ref: Date.now(),
   currency: "UGX",
   payment_options: "mobilemoney,card,ussd",
-  redirect_url: "/",
+  redirect_url: "",
   customizations: {
     title: "Eco Options",
     description: "Payment for items in cart",

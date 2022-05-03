@@ -18,5 +18,60 @@
     "id": 4,
     "question": "what is a heat patch?",
     "answer": "Cramps during your period? Hands-free heat on the go is the answer for you! A menstrual heat patch provides cramps relief by generating heat using air. It is slim and discreet, attached to your cloth over the area cramping using adhensive. It last for 10 hours."
+    },
+    {
+        "id": 5,
+        "question": "How long can I leave a cup or disc in?",
+        "answer": "You can leave your menstrual cup or disc in for up to twelve hours depending on the intensity of your period. If you have a heavier period, you many need to change after a shorter time. Please don’t leave your cup or disc in for more than 12 hours. It’s also advised to remove your cup or disc. at least twice in a day."
+    },
+    {
+        "id": 6,
+        "question": "How old do I have to be to use a cup/disc?",
+        "answer": "If you are comfortable with a cup or disc and you have had a period, you can use a cup or disc. There is NO age restriction for using a menstrual cup or disc. We have small size cups that are prefect for young and first time users."
+    },
+    {
+        "id": 7,
+        "question": "Can a virgin use a cup/disc?",
+        "answer": "YES. Intercourse is not a requirement for using a cup or disc. Virginity is a social construct and the hymen is just a cultural symbol of virginity. Hymens can stretch and come in various forms. How your body and hymen (if present) can only be known if you try. Its best to take it easy +and take your time. If you experience any pain or discomfort, you can stop and try again later."
+    },
+    {
+        "id": 8,
+        "question": "Are menstrual cups messy?",
+        "answer": "Discs are a bit messy. Removing a disc brings you into contact with your blood. Its recommended to remove a disc over the toilet or in the shower. With practice, removing the disc can become less messy or not messy at all."
+    },
+    {
+        "id": 9,
+        "question": "Can a disc get lost or stuck inside me?",
+        "answer": "NO. at the end of your vaginal canal is the cervix. The cervix does not allow anything to pass and end the uterus except semen. If your disc seems to be lost, use your muscles to work the cup down low enough to reach by bearing down, the same strain you use to poop. Once you reach it, get it out and consider a larger disc."
+    },
+    {
+        "id": 10,
+        "question": "Can a cup get lost or stuck inside me?",
+        "answer": "NO. at the end of your vaginal canal is the cervix. The cervix does not allow anything to pass and end the uterus except semen. If you try to remove your cup and feels stuck, be calm and ensure you are pinching the base of the cup in order to break the seal."
+    },
+    {
+        "id": 11,
+        "question": "How will know that my cup or disc is full?",
+        "answer": "Discs and cups can be worn safely for up to 12 hours but we recommend checking after 4 hours or so when you start using one. Within a few cycles, you will have a better understanding of your flow and how often to empty the disc or cup."
+    },
+    {
+        "id": 12,
+        "question": "How many cups or discs do I need?",
+        "answer": "Our cups and discs are reusable so you will only need one. Simply remove, pour out the contents, wash and replace."
+    },
+    {
+     "id": 13,
+     "question": "How does the menstrual underwear work?",
+     "answer": "It works like normal underwear and can be worn with any menstrual product such as pads, tampons, cups, discs, etc."   
+    },
+    {
+        "id": 14,
+        "question": "What is the difference between menstrual underwear and normal underwear?",
+        "answer": "Menstrual underwear has an absorbent leak proof layer that ensures the menstrual blood does reach your clothes to stained them in case of any leakage."
+    },
+    {
+        "id": 15,
+        "question": "Can I wear the underwear alone?",
+        "answer": "Unless you have a really light flow, the menstrual underwear shouldn’t be worn alone. Menstrual underwear is best worn as a backup option for leakage so that you don’t stain your clothes."
     }
 ]
