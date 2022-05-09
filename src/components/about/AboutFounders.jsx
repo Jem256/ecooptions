@@ -38,7 +38,7 @@ function AboutFounders() {
               to ease the financial burden of menstruating for fellow women especially those in Uganda.
               With our sustainable options, the average ugandan woman is able to save upto 95% of the 
               total amount she spends on disposable pads in a year!
-              Notwithstanding the comfort and time saved. As well as the positive impact of our products
+              Notwithstanding the comfort and time saved and the positive impact of our products
               for the environment. With our work, we hope to interest more menstruators in our Eco Options. 
             </p>
 
