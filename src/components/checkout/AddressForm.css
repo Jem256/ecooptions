@@ -23,6 +23,7 @@
     color: var(--color-primary);
     font-size: 1.5rem;
     padding: 5px;
+    padding-bottom: 1rem;
 }
 
 .addressForm > form {
@@ -40,9 +41,6 @@
     outline: none;
 }
 
-.addressForm > form > button {
-}
-
 .order {
     display: none;
 }
@@ -54,13 +52,28 @@
     padding: 2px;
 }
 
+.addressForm_btn > button:hover{
+    border: 1px solid var(--color-primary);
+} 
+
 /* ========== MEDIA QUERIES (MEDIUM DEVICES) ========== */
 @media screen and (max-width: 1024px) {
-    .checkout__button {
-        padding: 0.5rem 2rem;
+    
+}
+
+/* ========== MEDIA QUERIES (SMALL DEVICES) ========== */
+@media screen and (max-width: 600px){
+    .addressForm {
+        width: 22rem;
+    }
+    .header{
+        padding-bottom: 1.5rem;
     }
 
     .addressForm > form {
         grid-template-columns: 1fr;
+    }
+    .addressForm__cart {
+        display: none !important;
     }
 }

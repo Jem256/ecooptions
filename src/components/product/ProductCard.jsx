@@ -1,6 +1,6 @@
 import React from "react";
 import './ProductCard.css'
-import Carousel from 'flat-carousel'
+import soldout from '../../images/sold-out.png'
 
 // Redux
 import { connect } from "react-redux";
@@ -18,7 +18,12 @@ function ProductCard({product, addToCart, loadCurrentItem}) {
             <div className="productCard__container">
                 <div className="productCard__card">
                     <div className="productCard__image">
-                        <img src={product.image} width={500} height={300} alt={product.title} />
+                        <img src={product.image} width={400} height={300} alt={product.title} className='img2' />
+                        {product?.quantity === 0 && (
+                            <div className="middle">
+                                <img src={soldout} alt="soldout" className='img1' />
+                            </div>
+                        )}  
                     </div>
                     <div className="productCard__info">
                         <h3 className="productCard__title">{product.title}</h3>

@@ -8,6 +8,21 @@ import IMG5 from '../../images/bottle.png'
 const INITIAL_STATE = {
     products: [
       {
+        id: 4,
+        title: "Heat Patch (5 Pack)",
+        description:
+          <p> 
+            Comes in a pack of 5 patches <br />
+            Single use heating patches <br />
+            Made for menstrual cramps because nothing should cramp your style! <br />
+            heat on the go <br />
+          </p>
+        ,
+        price: 15000,
+        image: IMG4,
+        quantity: 6
+      },
+      {
       id: 1,
       title: "Menstrual Cup",
       description: 
@@ -20,21 +35,8 @@ const INITIAL_STATE = {
         </p>
       ,
       price: 50000,
-      image: IMG1
-    },
-    {
-      id: 2,
-      title: "Menstrual Underwear",
-      description:
-        <p>
-          Comes with 2 pieces of underwear of any color available <br />
-          Absorbent, breathable, hygienic and antibacterial <br />
-          Recommended for light flow and for the last days of your period <br />
-          Wash by hand or washing machine in cold water <br />
-        </p>
-      ,
-      price: 50000,
-      image: IMG2
+      image: IMG1,
+      quantity: 6
     },
     {
       id: 3,
@@ -49,21 +51,8 @@ const INITIAL_STATE = {
         </p>
       ,
       price: 60000,
-      image: IMG3
-    },
-    {
-      id: 4,
-      title: "Heat Patch (5 Pack)",
-      description:
-        <p> 
-          Comes in a pack of 5 patches <br />
-          Single use heating patches <br />
-          Made for menstrual cramps because nothing should cramp your style! <br />
-          heat on the go <br />
-        </p>
-      ,
-      price: 15000,
-      image: IMG4
+      image: IMG3,
+      quantity: 6
     },
     {
       id: 5,
@@ -78,7 +67,23 @@ const INITIAL_STATE = {
         </p>
       ,
       price: 60000,
-      image: IMG5
+      image: IMG5,
+      quantity: 6
+    },
+    {
+      id: 2,
+      title: "Menstrual Underwear",
+      description:
+        <p>
+          Comes with 2 pieces of underwear of any color available <br />
+          Absorbent, breathable, hygienic and antibacterial <br />
+          Recommended for light flow and for the last days of your period <br />
+          Wash by hand or washing machine in cold water <br />
+        </p>
+      ,
+      price: 50000,
+      image: IMG2,
+      quantity: 0
     },
   ],
   cart: [],
@@ -96,7 +101,6 @@ const shopReducer = (state = INITIAL_STATE, action) => {
       const inCart = state.cart.find((item) =>
         item.id === action.payload.id ? true : false
       );
-
       return {
         ...state,
         cart: inCart
@@ -106,7 +110,7 @@ const shopReducer = (state = INITIAL_STATE, action) => {
                 : item
             )
           : [...state.cart, { ...item, qty: 1 }],
-      };
+      }; 
     case actionTypes.REMOVE_FROM_CART:
       return {
         ...state,

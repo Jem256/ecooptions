@@ -3,10 +3,11 @@ import "./Cart.css";
 import CurrencyFormat from "react-currency-format";
 import CartItem from './CartItem';
 import { Link } from 'react-router-dom'
-import { connect } from "react-redux";
+import { useSelector } from "react-redux";
 
 
-function Cart({cart}) {
+function Cart() {
+    const cart = useSelector((state) => state.shop.cart);
     const [totalPrice, setTotalPrice] = useState(0);
     const [totalItems, setTotalItems] = useState(0);
     // const [discount, setDiscount] = useState('');
@@ -90,7 +91,7 @@ function Cart({cart}) {
             { renderTotal() }
             <div className="cart__footer">
                 <Link to='/checkout'>
-                    <button className="cart__btn-checkout btn">Proceed To Checkout</button> 
+                    <button className="cart__checkout btn">Proceed To Checkout</button> 
                 </Link>
             </div>
         </div>
@@ -99,10 +100,4 @@ function Cart({cart}) {
         
 }
 
-const mapStateToProps = (state) => {
-  return {
-    cart: state.shop.cart,
-  };
-};
-
-export default connect(mapStateToProps)(Cart);
+export default Cart;

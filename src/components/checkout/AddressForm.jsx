@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import "./AddressForm.css";
-import { useFlutterwave, closePaymentModal } from "flutterwave-react-v3";
 import { defaultFlutterConfig } from "../../flutterConfig";
+import { useSelector } from "react-redux";
+import FlutterwaveCheckout from "./FlutterwaveCheckout";
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore'
-import db from '../../firebase'
-import { connect } from "react-redux";
-// import emailjs from '@emailjs/browser'
+import db from '../../firebase';
 
 
-const AddressForm = ({cart}) => {
+const AddressForm = () => {
   const [totalPrice, setTotalPrice] = useState(0);
+
+  const cart = useSelector((state) => state.shop.cart);
   
   useEffect(() => {
     let price = 0;
@@ -20,6 +20,7 @@ const AddressForm = ({cart}) => {
     });
 
     setTotalPrice(price);
+
   }, [cart, totalPrice, setTotalPrice]);
     
   const initialFormData = {
@@ -27,130 +28,124 @@ const AddressForm = ({cart}) => {
     firstName: "",
     lastName: "",
     phoneNumber: "",
+    address: "",
     city: "",
   };
 
   const [formData, setFormData] = useState(initialFormData);
-  const [flutterConfig, setflutterConfig] = useState(defaultFlutterConfig);
+  const [readyToCheckout, setReadyToCheckout] = useState(false);
 
   const onChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const makePayment = () => {
-    setflutterConfig({
-      ...flutterConfig,
-      amount:totalPrice,
-      customer: {
-        email: formData.email,
-        phoneNumber: formData.phoneNumber,
-        name: formData.firstName,
-      },
-    });
+    setReadyToCheckout(true); 
+  };
 
-    handleFlutterPayment({
-      callback: (response) => {
-        console.log(response);    
-        
-        closePaymentModal(); // this will close the modal programmatically
-
-        
-      },
-      onClose: () => {
-        addDoc(collection(db, 'orders'), {
-          customer: formData.firstName,
+  const renderCheckoutDetails = () => {
+    if (readyToCheckout) {
+      const config = {
+        ...defaultFlutterConfig,
+        amount:totalPrice,
+        customer: {
+          email: formData.email,
+          phoneNumber: formData.phoneNumber,
+          name: formData.firstName,
+        },
+      }
+      return (
+        <FlutterwaveCheckout config={config}  />,
+        addDoc(collection(db, 'address'), {
+          firstName: formData.firstName,
+          lastName: formData.lastName,
           email: formData.email,
           phoneNumber: formData.phoneNumber,
           address: formData.address,
           city: formData.city,
-          amount: totalPrice,
-          productId: cart.map((item) => item.id),
-          productTitle: cart.map((item) => item.title),
-          productQty: cart.map((item) => item.qty),
           timestamp: serverTimestamp(),
         })
-      }
-    })
-    
-  };
+      )            
+    } else {
+      return (
+        <div className="addressForm">
+          <h2 className="header">
+            Billing Details
+          </h2>
+          <form onSubmit={makePayment}>
+            <input
+              name="firstName"
+              placeholder="First Name"
+              type="text"
+              required
+              onChange={onChange}
+            />
+            <input
+              name="lastName"
+              placeholder="Last Name"
+              type="text"
+              required
+              onChange={onChange}
+            />
+            <input
+              name="email"
+              placeholder="Email"
+              type="email"
+              required
+              onChange={onChange}
+            />
+            <input
+              name="phoneNumber"
+              placeholder="Phone Number"
+              type="text"
+              required
+              onChange={onChange}
+            />
+            <input
+              name="address"
+              placeholder="Enter Details of Delivery Address"
+              type="text"
+              required
+              onChange={onChange}
+            />
+            <input
+              name="city"
+              placeholder="City"
+              type="text"
+              required
+              onChange={onChange}
+            />
+            <button
+              type="submit"
+              variant="contained"
+              className="btn btn-primary"
+            >
+              Make Payment
+            </button>
+          </form>
+          {/* <div className="addressForm_btn" style={{ display: "flex", justifyContent: "flex-end" }}>
+            <button
+              variant="outlined"
+              className="btn btn-primary addressForm__cart"
+              onClick={handleClick}
+            >
+              Back to Cart
+            </button>
+          </div> */}
+        </div>
 
-  const handleFlutterPayment = useFlutterwave(flutterConfig);
+      )
+    }
+  }
 
-
-  return (
-    <div className="addressForm">
-      <h2 className="header">
-        Billing Details
-      </h2>
-      <form onSubmit={makePayment}>
-        <input
-          name="firstName"
-          placeholder="First Name"
-          type="text"
-          required
-          onChange={onChange}
-        />
-        <input
-          name="lastName"
-          placeholder="Last Name"
-          type="text"
-          onChange={onChange}
-        />
-        <input
-          name="email"
-          placeholder="Email"
-          type="email"
-          required
-          onChange={onChange}
-        />
-        <input
-          name="phoneNumber"
-          placeholder="Phone Number"
-          type="text"
-          required
-          onChange={onChange}
-        />
-        <input
-          name="address"
-          placeholder="Enter Details of Delivery Address"
-          type="text"
-          required
-          onChange={onChange}
-        />
-        <input
-          name="city"
-          placeholder="City"
-          type="text"
-          required
-          onChange={onChange}
-        />
-        <Link to='/cart'>
-          <button
-            variant="outlined"
-            className="btn btn-primary checkout__button"
-          >
-            Back to Cart
-          </button>
-        </Link>
-        <button
-          type="submit"
-          variant="contained"
-          className="btn btn-primary checkout__button"
-          onClick={makePayment}
-        >
-          Make Payment
-        </button>
-      </form>
-    </div>
-
-    // cart summary
-  );
+return renderCheckoutDetails();
+  
 };
 
-const mapStateToProps = (state) => {
-  return {
-    cart: state.shop.cart,
-  };
-};
+// const mapStateToProps = (state) => {
+//   return {
+//     cart: state.shop.cart,
+//   };
+// };
 
-export default connect(mapStateToProps)(AddressForm);
+export default AddressForm;
