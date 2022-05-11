@@ -25,6 +25,12 @@ function Cart() {
         setTotalPrice(price);
     }, [cart, totalPrice, totalItems, setTotalPrice, setTotalItems]);
 
+    // const handleClick = () => {
+    //     if (totalItems > 0) {
+    //         setDisabled(true);
+    //     };
+    // }
+
     const renderItems = () => {
         if (totalItems > 0) {
             return(
@@ -46,20 +52,20 @@ function Cart() {
 
     }
 
-    const renderDiscount = () => (
-        <div className="cart__total">
-            <p className="cart__total-title"> Dicount Code:</p>
-            <form>
-                <input 
-                className='cart__discount'
-                name="discount"
-                placeholder="Enter Dicount Code"
-                type="text"
-                />
-                <button type='submit' className="cart__btn-checkout btn">Apply</button>
-            </form>
-        </div>
-    )
+    // const renderDiscount = () => (
+    //     <div className="cart__total">
+    //         <p className="cart__total-title"> Dicount Code:</p>
+    //         <form>
+    //             <input 
+    //             className='cart__discount'
+    //             name="discount"
+    //             placeholder="Enter Dicount Code"
+    //             type="text"
+    //             />
+    //             <button type='submit' className="cart__btn-checkout btn">Apply</button>
+    //         </form>
+    //     </div>
+    // )
 
     const renderTotal = () => (
         <div className="cart__total">
@@ -91,7 +97,11 @@ function Cart() {
             { renderTotal() }
             <div className="cart__footer">
                 <Link to='/checkout'>
-                    <button className="cart__checkout btn">Proceed To Checkout</button> 
+                    {totalItems > 0 && (
+                        <button className="cart__checkout btn">
+                            Proceed To Checkout
+                        </button> 
+                    )}
                 </Link>
             </div>
         </div>

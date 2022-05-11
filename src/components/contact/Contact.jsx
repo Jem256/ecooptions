@@ -24,7 +24,7 @@ function Contact() {
           
           <article className='contact__icons'  >
             <MdOutlineMail /> 
-            <a href="mailto:support@ecooptionsug.com" target='_blank'>Email</a>
+            <a href="mailto:ecooptions4@gmail.com" target='_blank'>Email</a>
           </article>
             
           <article className="contact__icons">

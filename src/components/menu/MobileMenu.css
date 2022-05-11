@@ -1,7 +1,7 @@
 .mobileMenu {
     /* background: rgba(6, 70, 53, 0.7); */
     background: var(--color-primary);
-    padding: 0.25rem 3rem;
+    padding: 0.45rem 2rem;
     z-index: 2;
     position: fixed;
     left: 50%;
@@ -15,7 +15,7 @@
     display: flex;
     flex-wrap: nowrap;
     align-items: center;
-    gap: 1.5rem;
+    gap: 2rem;
 }
 
 .mobileMenu__item {

@@ -40,9 +40,11 @@ function ProductCard({product, addToCart, loadCurrentItem}) {
                             <h5>Description</h5>
                             {product.description}                            
                         </div>
-                        <div className="last_section">
-                            <button onClick={()=> addToCart(product.id)}>Add to cart</button>
-                        </div>
+                        {product?.quantity > 0 && (
+                            <div className="last_section">
+                                <button onClick={()=> addToCart(product.id)}>Add to cart</button>
+                            </div>  
+                        )}
                     </div>
                 </div>
 
