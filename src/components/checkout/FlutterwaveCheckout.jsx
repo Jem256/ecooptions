@@ -40,7 +40,7 @@ function FlutterwaveCheckout(props) {
         },
         onClose: () => {
             // redirect them back to checkout form
-            history.push("/checkout");
+          history.push('/checkout');
         }
       })
     });
