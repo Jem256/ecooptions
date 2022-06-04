@@ -43,6 +43,20 @@ const AddressForm = () => {
     setReadyToCheckout(true); 
   };
 
+  const data = () => {
+    if (readyToCheckout){
+      addDoc(collection(db, 'address'), {
+        firstName: formData.firstName,
+        lastName: formData.lastName,
+        email: formData.email,
+        phoneNumber: formData.phoneNumber,
+        address: formData.address,
+        city: formData.city,
+        timestamp: serverTimestamp(),
+      })
+    }
+  }
+
   const renderCheckoutDetails = () => {
     if (readyToCheckout) {
       const config = {
@@ -55,16 +69,7 @@ const AddressForm = () => {
         },
       }
       return (
-        <FlutterwaveCheckout config={config}  />,
-        addDoc(collection(db, 'address'), {
-          firstName: formData.firstName,
-          lastName: formData.lastName,
-          email: formData.email,
-          phoneNumber: formData.phoneNumber,
-          address: formData.address,
-          city: formData.city,
-          timestamp: serverTimestamp(),
-        })
+        <FlutterwaveCheckout config={config}  />
       )            
     } else {
       return (
@@ -138,7 +143,12 @@ const AddressForm = () => {
     }
   }
 
-return renderCheckoutDetails();
+return(
+  <div>
+    {data()}
+    {renderCheckoutDetails()}
+  </div>
+);
   
 };
 

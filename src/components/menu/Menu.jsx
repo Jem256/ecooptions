@@ -5,9 +5,14 @@ import {MdOutlineShoppingBag} from 'react-icons/md'
 import MobileMenu from './MobileMenu'
 import { Link } from 'react-router-dom'
 import {connect} from 'react-redux'
+import { getAnalytics, logEvent } from "firebase/analytics";
+
 
 function Menu({cart}) {
     const [cartCount, setCartCount] = useState(0);
+    // Log event
+    const analytics = getAnalytics();
+    logEvent(analytics, 'select_item', Link);
 
     useEffect(() => {
         let count = 0;

@@ -34,6 +34,7 @@ function FlutterwaveCheckout(props) {
             
           } else {
             // take them to failure route
+            history.push("/checkout");
           }
           
         },
