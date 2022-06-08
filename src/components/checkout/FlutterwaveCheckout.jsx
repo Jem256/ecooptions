@@ -10,6 +10,7 @@ function FlutterwaveCheckout(props) {
     const cart = useSelector((state) => state.shop.cart);
     const emptyCart = useSelector((state) => state.shop.state);
     const handleFlutterPayment = useFlutterwave(props.config);
+    
     useEffect(() => {
       handleFlutterPayment({
         callback: (response) => {
@@ -34,13 +35,13 @@ function FlutterwaveCheckout(props) {
             
           } else {
             // take them to failure route
-            history.push("/checkout");
+            history.push("/");
           }
           
         },
         onClose: () => {
             // redirect them back to checkout form
-          history.push('/checkout');
+          history.push('/');
         }
       })
     });

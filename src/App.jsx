@@ -22,6 +22,7 @@ function App() {
       <Menu/>
 
       <Switch>
+
         <Route path='/faqs'>
           <FAQs />
         </Route>
