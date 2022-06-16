@@ -8,6 +8,21 @@ import IMG5 from '../../images/bottle.png'
 const INITIAL_STATE = {
     products: [
       {
+        id: 2,
+        title: "Menstrual Underwear",
+        description:
+          <p>
+            Comes with 2 pieces of underwear of any color available <br />
+            Absorbent, breathable, hygienic and antibacterial <br />
+            Recommended for light flow and for the last days of your period <br />
+            Wash by hand or washing machine in cold water <br />
+          </p>
+        ,
+        price: 50000,
+        image: IMG2,
+        quantity: 30
+      },
+      {
         id: 4,
         title: "Heat Patch (5 Pack)",
         description:
@@ -36,23 +51,7 @@ const INITIAL_STATE = {
       ,
       price: 50000,
       image: IMG1,
-      quantity: 6
-    },
-    {
-      id: 3,
-      title: "Menstrual Disc",
-      description:
-        <p>
-          Comes with one disc and one storage container <br />
-          100% medical-grade silicone <br />
-          Soft and flexible enough for easy insertion <br />
-          Firm rim that keeps it in place and creates a leak-free & suction-free seal <br />
-          Capacity of 3-4 pads
-        </p>
-      ,
-      price: 60000,
-      image: IMG3,
-      quantity: 6
+      quantity: 0
     },
     {
       id: 5,
@@ -71,19 +70,20 @@ const INITIAL_STATE = {
       quantity: 6
     },
     {
-      id: 2,
-      title: "Menstrual Underwear",
+      id: 3,
+      title: "Menstrual Disc",
       description:
         <p>
-          Comes with 2 pieces of underwear of any color available <br />
-          Absorbent, breathable, hygienic and antibacterial <br />
-          Recommended for light flow and for the last days of your period <br />
-          Wash by hand or washing machine in cold water <br />
+          Comes with one disc and one storage container <br />
+          100% medical-grade silicone <br />
+          Soft and flexible enough for easy insertion <br />
+          Firm rim that keeps it in place and creates a leak-free & suction-free seal <br />
+          Capacity of 3-4 pads
         </p>
       ,
       price: 50000,
-      image: IMG2,
-      quantity: 0
+      image: IMG3,
+      quantity: 6
     },
   ],
   cart: [],
