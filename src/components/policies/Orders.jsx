@@ -15,7 +15,7 @@ function Orders() {
         </p>
         <h3>How much does shipping cost?</h3>
         <p>
-            We make deliveries using the glovo or safeboda apps. Shipping fee to your 
+            We make deliveries using Sendy Fulfillment Uganda. Shipping fee to your 
             preferred destination is therefore determined by this. 
             For those outside the coverage of these platforms but within Uganda, your shipping 
             fee is determined by the courier (buses/taxis) to your destination. 

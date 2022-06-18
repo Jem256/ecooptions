@@ -32,7 +32,6 @@ const AddressForm = () => {
 
     const [formData, setFormData] = useState(initialFormData);
     const [readyToCheckout, setReadyToCheckout] = useState(false);
-    const [loading, setLoading] = useState(false);
 
     const onChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
