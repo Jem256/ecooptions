@@ -1,7 +1,7 @@
 import React from 'react'
 import './EssentialsSection.css'
 import IMG1 from '../../images/home-cup.png'
-import IMG2 from '../../images/home-disc.png'
+import IMG2 from '../../images/patch.png'
 import IMG3 from '../../images/panty.jpg'
 import {Link} from 'react-router-dom'
 
@@ -21,7 +21,7 @@ function EssentialsSection() {
     {
       id: 2,
       image: IMG2,
-      title: 'Eco Menstrual Disc' 
+      title: 'Eco Heat Patch' 
     },
   ]
   return (
