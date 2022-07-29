@@ -33,7 +33,7 @@ const INITIAL_STATE = {
             heat on the go <br />
           </p>
         ,
-        price: 15000,
+        price: 20000,
         image: IMG4,
         quantity: 6
       },
@@ -69,22 +69,22 @@ const INITIAL_STATE = {
       image: IMG5,
       quantity: 6
     },
-    {
-      id: 3,
-      title: "Menstrual Disc",
-      description:
-        <p>
-          Comes with one disc and one storage container <br />
-          100% medical-grade silicone <br />
-          Soft and flexible enough for easy insertion <br />
-          Firm rim that keeps it in place and creates a leak-free & suction-free seal <br />
-          Capacity of 3-4 pads
-        </p>
-      ,
-      price: 50000,
-      image: IMG3,
-      quantity: 6
-    },
+    // {
+    //   id: 3,
+    //   title: "Menstrual Disc",
+    //   description:
+    //     <p>
+    //       Comes with one disc and one storage container <br />
+    //       100% medical-grade silicone <br />
+    //       Soft and flexible enough for easy insertion <br />
+    //       Firm rim that keeps it in place and creates a leak-free & suction-free seal <br />
+    //       Capacity of 3-4 pads
+    //     </p>
+    //   ,
+    //   price: 50000,
+    //   image: IMG3,
+    //   quantity: 6
+    // },
   ],
   cart: [],
   currentItem: null,
