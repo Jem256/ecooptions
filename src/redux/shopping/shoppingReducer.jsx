@@ -7,37 +7,22 @@ import IMG5 from '../../images/bottle.png'
 
 const INITIAL_STATE = {
     products: [
-      {
-        id: 2,
-        title: "Menstrual Underwear",
-        description:
-          <p>
-            Comes with 2 pieces of underwear of any color available <br />
-            Absorbent, breathable, hygienic and antibacterial <br />
-            Recommended for light flow and for the last days of your period <br />
-            Wash by hand or washing machine in cold water <br />
-          </p>
-        ,
-        price: 50000,
-        image: IMG2,
-        quantity: 30
-      },
-      {
-        id: 4,
-        title: "Heat Patch (5 Pack)",
-        description:
-          <p> 
-            Comes in a pack of 5 patches <br />
-            Single use heating patches <br />
-            Made for menstrual cramps because nothing should cramp your style! <br />
-            heat on the go <br />
-          </p>
-        ,
-        price: 20000,
-        image: IMG4,
-        quantity: 6
-      },
-      {
+    {
+      id: 2,
+      title: "Menstrual Underwear",
+      description:
+        <p>
+          Comes with 2 pieces of underwear of any color available <br />
+          Absorbent, breathable, hygienic and antibacterial <br />
+          Recommended for light flow and for the last days of your period <br />
+          Wash by hand or washing machine in cold water <br />
+        </p>
+      ,
+      price: 50000,
+      image: IMG2,
+      quantity: 30
+    },
+    {
       id: 1,
       title: "Menstrual Cup",
       description: 
@@ -51,6 +36,21 @@ const INITIAL_STATE = {
       ,
       price: 50000,
       image: IMG1,
+      quantity: 9
+    },
+    {
+      id: 4,
+      title: "Heat Patch (5 Pack)",
+      description:
+        <p> 
+          Comes in a pack of 5 patches <br />
+          Single use heating patches <br />
+          Made for menstrual cramps because nothing should cramp your style! <br />
+          heat on the go <br />
+        </p>
+      ,
+      price: 20000,
+      image: IMG4,
       quantity: 0
     },
     {
@@ -67,7 +67,7 @@ const INITIAL_STATE = {
       ,
       price: 60000,
       image: IMG5,
-      quantity: 6
+      quantity: 1
     },
     // {
     //   id: 3,
