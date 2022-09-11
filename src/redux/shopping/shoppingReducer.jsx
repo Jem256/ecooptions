@@ -1,9 +1,7 @@
 import * as actionTypes from './actionTypes'
 import IMG1 from '../../images/cup.png'
 import IMG2 from '../../images/panties.png'
-import IMG3 from '../../images/disc.png'
 import IMG4 from '../../images/patch.png'
-import IMG5 from '../../images/bottle.png'
 
 const INITIAL_STATE = {
     products: [
@@ -53,38 +51,6 @@ const INITIAL_STATE = {
       image: IMG4,
       quantity: 0
     },
-    {
-      id: 5,
-      title: "Hot Water Bottle",
-      description:
-        <p> 
-          Comes with one bottle and belt <br />
-          Not your regular hot water bottle <br />
-          Reusable hot water bottle for period cramps <br />
-          A hands-free bottle that placed inside the pouch and the belt wrapped around your abdomen <br />
-          No need to hold hold it. <br />
-        </p>
-      ,
-      price: 60000,
-      image: IMG5,
-      quantity: 1
-    },
-    // {
-    //   id: 3,
-    //   title: "Menstrual Disc",
-    //   description:
-    //     <p>
-    //       Comes with one disc and one storage container <br />
-    //       100% medical-grade silicone <br />
-    //       Soft and flexible enough for easy insertion <br />
-    //       Firm rim that keeps it in place and creates a leak-free & suction-free seal <br />
-    //       Capacity of 3-4 pads
-    //     </p>
-    //   ,
-    //   price: 50000,
-    //   image: IMG3,
-    //   quantity: 6
-    // },
   ],
   cart: [],
   currentItem: null,

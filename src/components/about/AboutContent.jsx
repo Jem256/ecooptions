@@ -12,13 +12,7 @@ function AboutContent() {
                   Great! we're here to make it better
               </h1>
               <p>
-                  Eco Options is a a social enterprise that was birthed from the
-                  need to revolutionize menstrual care in Uganda. We aim to
-                  change attitudes and improve lives through providing
-                  innovative sustainable peiod options for all people regardless
-                  of their income. We use the power of business to tackle social
-                  and environmental challenges resulting from period poverty in
-                  Uganda.
+              Eco Options is a social enterprise birthed from the need to revolutionize menstrual care in Uganda. We aim to change attitudes and improve lives by providing innovative sustainable period options for everyone regardless of income. We use the power of business to tackle social and environmental challenges resulting from period poverty in Uganda.
               </p>
           </div>
       </section>

@@ -26,24 +26,15 @@ function AboutFounders() {
             </p>
 
             <p>
-              Eco Options began with a conversation Jemimah had with a friend 
-              about the discomfort of pads and how her monthly expenditure on periods was taking 
-              a toll on her finances during the covid lockdown. The friend introduced her to 
-              menstrual cups and 3 months after using one, she was mindblown! Why wasn't every menstruator
-              in Uganda using this?! 
+            Eco Options began with a conversation Jemimah had with a friend about the discomfort of pads and how her monthly expenditure on periods was taking a toll on her finances during the covid lockdown. The friend introduced her to menstrual cups and 3 months after using one, she was mind-blown! Why wasn't every menstruator in Uganda using this?!
             </p>
 
             <p>
-              After doing extensive research about it, Jemimah and Olivia co-founded Eco Options  
-              to ease the financial burden of menstruating for fellow women especially those in Uganda.
-              With our sustainable options, the average ugandan woman is able to save upto 95% of the 
-              total amount she spends on disposable pads in a year!
-              Notwithstanding the comfort and time saved and the positive impact of our products
-              for the environment. With our work, we hope to interest more menstruators in our Eco Options. 
+            After doing extensive research about it, Jemimah and Olivia co-founded Eco Options to ease the financial burden of menstruating for fellow women especially those in Uganda. With our sustainable options, the average Ugandan woman is able to save up to 95% of the total amount she spends on disposable pads in a year! Notwithstanding the comfort,  time saved, and positive impact of our products on the environment. With our work, we hope to interest more menstruators in our Eco Options.
             </p>
 
             <p>
-              Browse our <Link to='/shop' className='link'>catalogue</Link> to find out what we have to Offer
+              Browse our <Link to='/shop' className='link'>catalog</Link> to find out what we have to Offer
             </p>
             
           </div>
