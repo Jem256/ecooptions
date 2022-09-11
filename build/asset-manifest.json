@@ -1,25 +1,23 @@
 {
   "files": {
     "main.css": "/static/css/main.0dca3f7d.css",
-    "main.js": "/static/js/main.6b41f0b2.js",
+    "main.js": "/static/js/main.5b7bcb13.js",
     "static/media/IMG_US.JPG": "/static/media/IMG_US.006cb50921a34a14c25c.JPG",
     "static/media/IMG_about1.jpg": "/static/media/IMG_about1.d80366fb237d02810701.jpg",
     "static/media/patch.png": "/static/media/patch.b21db509d10b1eda8efa.png",
     "static/media/panties.png": "/static/media/panties.de6b157f78f6c56da54d.png",
-    "static/media/bottle.png": "/static/media/bottle.d170553dd255c879bdff.png",
     "static/media/cup.png": "/static/media/cup.bd6e49c7a4850795c8ad.png",
     "static/media/home-cup.png": "/static/media/home-cup.c7ab7177e9ad6eb17c8c.png",
-    "static/media/disc.png": "/static/media/disc.aba29ca13e1e764647d0.png",
     "static/media/panty.jpg": "/static/media/panty.c280766b46ddf6b68d49.jpg",
     "static/media/sold-out.png": "/static/media/sold-out.d50bc3b8f8eb3dea681d.png",
     "static/media/logoEC.png": "/static/media/logoEC.6b475da3fe135b93d8a3.png",
     "static/media/white.jpg": "/static/media/white.ebaa05e700d31f89fc68.jpg",
     "index.html": "/index.html",
     "main.0dca3f7d.css.map": "/static/css/main.0dca3f7d.css.map",
-    "main.6b41f0b2.js.map": "/static/js/main.6b41f0b2.js.map"
+    "main.5b7bcb13.js.map": "/static/js/main.5b7bcb13.js.map"
   },
   "entrypoints": [
     "static/css/main.0dca3f7d.css",
-    "static/js/main.6b41f0b2.js"
+    "static/js/main.5b7bcb13.js"
   ]
 }
