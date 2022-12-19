@@ -4,26 +4,26 @@ import IMG2 from '../../images/panties.png'
 import IMG4 from '../../images/patch.png'
 
 const INITIAL_STATE = {
-    products: [
+  products: [
     {
       id: 2,
-      title: "Menstrual Underwear",
-      description:
+      title: 'Menstrual Underwear',
+      description: (
         <p>
           Comes with 2 pieces of underwear of any color available <br />
           Absorbent, breathable, hygienic and antibacterial <br />
           Recommended for light flow and for the last days of your period <br />
           Wash by hand or washing machine in cold water <br />
         </p>
-      ,
+      ),
       price: 50000,
       image: IMG2,
-      quantity: 30
+      quantity: 30,
     },
     {
       id: 1,
-      title: "Menstrual Cup",
-      description: 
+      title: 'Menstrual Cup',
+      description: (
         <p>
           Comes with one cup and one storage container <br />
           100% medical-grade silicone <br />
@@ -31,30 +31,31 @@ const INITIAL_STATE = {
           Firm rim that pops open and creates a leak-free seal <br />
           Capacity of 2-3 pads
         </p>
-      ,
+      ),
       price: 50000,
       image: IMG1,
-      quantity: 9
+      quantity: 9,
     },
     {
       id: 4,
-      title: "Heat Patch (5 Pack)",
-      description:
-        <p> 
+      title: 'Heat Patch (5 Pack)',
+      description: (
+        <p>
           Comes in a pack of 5 patches <br />
           Single use heating patches <br />
-          Made for menstrual cramps because nothing should cramp your style! <br />
+          Made for menstrual cramps because nothing should cramp your style!{' '}
+          <br />
           heat on the go <br />
         </p>
-      ,
+      ),
       price: 20000,
       image: IMG4,
-      quantity: 0
+      quantity: 10,
     },
   ],
   cart: [],
   currentItem: null,
-}
+};
 
 const shopReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
